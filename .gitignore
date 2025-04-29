@@ -1,0 +1,15 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/repo/v17
+/HotelUArcClean/HotelUArcClean.API/obj
+/HotelUArcClean/HotelUArcClean.API/bin/Debug/net9.0
+/HotelUArcClean/HotelUArcClean.Application/bin/Debug/net9.0
+/HotelUArcClean/HotelUArcClean.Application/obj
+/HotelUArcClean/HotelUArcClean.Domain/bin/Debug/net9.0
+/HotelUArcClean/HotelUArcClean.Domain/obj/Debug/net9.0
+/HotelUArcClean/HotelUArcClean.Domain/obj
+/HotelUArcClean/HotelUArcClean.Infrastructure/bin/Debug/net9.0
+/HotelUArcClean/HotelUArcClean.Infrastructure/obj
+/HotelUArcClean/.vs
