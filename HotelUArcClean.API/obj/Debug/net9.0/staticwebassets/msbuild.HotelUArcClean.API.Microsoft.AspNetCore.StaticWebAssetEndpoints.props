@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/HotelUArcClean.API/HotelUArcClean.API.5ecs6otvjb.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\HotelUArcClean.API.5ecs6otvjb.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5ecs6otvjb"},{"Name":"integrity","Value":"sha256-vePaJoplSx1kJZWteh3Y6DOZgcmq1cGX/57YVBIp0MQ="},{"Name":"label","Value":"_content/HotelUArcClean.API/HotelUArcClean.API.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2271"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vePaJoplSx1kJZWteh3Y6DOZgcmq1cGX/57YVBIp0MQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 29 Apr 2025 17:45:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HotelUArcClean.API/HotelUArcClean.API.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\HotelUArcClean.API.5ecs6otvjb.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vePaJoplSx1kJZWteh3Y6DOZgcmq1cGX/57YVBIp0MQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2271"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vePaJoplSx1kJZWteh3Y6DOZgcmq1cGX/57YVBIp0MQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 29 Apr 2025 17:45:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

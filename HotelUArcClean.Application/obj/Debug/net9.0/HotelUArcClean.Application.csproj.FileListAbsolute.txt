@@ -1,0 +1,15 @@
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\bin\Debug\net9.0\HotelUArcClean.Application.deps.json
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\bin\Debug\net9.0\HotelUArcClean.Application.dll
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\bin\Debug\net9.0\HotelUArcClean.Application.pdb
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\bin\Debug\net9.0\HotelUArcClean.Domain.dll
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\bin\Debug\net9.0\HotelUArcClean.Domain.pdb
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\HotelUArcClean.Application.csproj.AssemblyReference.cache
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\HotelUArcClean.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\HotelUArcClean.Application.AssemblyInfoInputs.cache
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\HotelUArcClean.Application.AssemblyInfo.cs
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\HotelUArcClean.Application.csproj.CoreCompileInputs.cache
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\HotelUAr.3ADFE318.Up2Date
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\HotelUArcClean.Application.dll
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\refint\HotelUArcClean.Application.dll
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\HotelUArcClean.Application.pdb
+C:\Users\USER\repo\HotelUArcClean\HotelUArcClean.Application\obj\Debug\net9.0\ref\HotelUArcClean.Application.dll

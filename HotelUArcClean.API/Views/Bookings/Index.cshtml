@@ -1,0 +1,97 @@
+﻿@model IEnumerable<HotelUColombia.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string urlRoom = "https://localhost:7064/Rooms/Details/{0}";
+    string urlcliente = "https://localhost:7064/Home/Details/{0}";
+    string urlstaus = "https://localhost:7064/statusbookings/Details/{0}";
+
+
+}
+
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Acerca de</title>
+    <link rel="stylesheet" href="main.css" media="screen">
+    <link rel="stylesheet" href="Acerca-de.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="main.js" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <script type="application/ld+json">
+        {
+                "context": "http://schema.org",
+                "type": "Organization",
+                "name": "CatCodeStudio",
+                "logo": "images/Logo-UniversitariadeColombia.png",
+                "sameAs": []
+        }</script>
+    <meta name="theme-color" content="#29b7dd">
+    <meta property="og:title" content="Acerca de">
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="padding-left:25px">
+                @Html.DisplayNameFor(model => model.IdRoom)|
+            </th>
+            <th style="padding-left:25px">
+                @Html.DisplayNameFor(model => model.IdCliente)|
+            </th>
+            <th style="padding-left:25px">
+                @Html.DisplayNameFor(model => model.ValorTotal)|
+            </th>
+            <th style="padding-left:25px">
+                @Html.DisplayNameFor(model => model.IdStatus)|
+            </th>
+            <th style="padding-left:25px">
+                @Html.DisplayNameFor(model => model.IdUsuario)|
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="padding-left:25px">
+                    <a href="@string.Format(urlRoom,item.IdRoom)">@Html.DisplayFor(modelItem => item.IdRoom)</a>
+                </td>
+                <td style="padding-left:25px">
+                    <a href="@string.Format(urlcliente,item.IdCliente)">@Html.DisplayFor(modelItem => item.IdCliente)</a>
+                </td>
+
+                <td style="padding-left:25px">
+                    @Html.DisplayFor(modelItem => item.ValorTotal)
+                </td>
+                <td style="padding-left:25px">
+                    <a href="@string.Format(urlstaus,item.IdStatus)"> @Html.DisplayFor(modelItem => item.IdStatus)</a>
+                   
+                </td>
+                <td style="padding-left:25px">
+                    @Html.DisplayFor(modelItem => item.IdUsuario)
+                </td>
+                <td style="padding-left:25px">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</html>
+
+
+
