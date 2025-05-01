@@ -1,19 +1,18 @@
 ﻿using HotelUColombia.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using System.Reflection.Emit;
 
 namespace HotelUColombia.Data
 {
     public class HotelUColombiaContext : DbContext
     {
 
-        public HotelUColombiaContext(DbContextOptions<HotelUColombiaContext> options) : base(options)
+        public HotelUColombiaContext(DbContextOptions<HotelUColombiaContext> options)
+             : base(options)
         {
-            // Patch for Postgres DateTime variables
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-
-            Database.Migrate();
         }
+
 
         public DbSet<Booking> Booking { get; set; } = default!;
         public DbSet<Client> Client { get; set; } = default!;
@@ -26,8 +25,8 @@ namespace HotelUColombia.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            builder.ApplyConfigurationsFromAssembly(typeof(HotelUColombiaContext).Assembly);
+
         }
     }
 }
