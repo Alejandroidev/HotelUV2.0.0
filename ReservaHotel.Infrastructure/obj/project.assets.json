@@ -2855,11 +2855,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\ReservaHotel.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\ReservaHotel.Infrastructure.csproj",
       "projectName": "ReservaHotel.Infrastructure",
-      "projectPath": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\ReservaHotel.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\ReservaHotel.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2883,11 +2883,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Application\\ReservaHotel.Application.csproj": {
-              "projectPath": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Application\\ReservaHotel.Application.csproj"
+            "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\ReservaHotel.Application.csproj": {
+              "projectPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\ReservaHotel.Application.csproj"
             },
-            "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj": {
-              "projectPath": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj"
+            "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj": {
+              "projectPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj"
             }
           }
         }

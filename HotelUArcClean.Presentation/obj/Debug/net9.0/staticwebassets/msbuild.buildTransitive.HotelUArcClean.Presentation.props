@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\HotelUArcClean.Presentation.props" />
-</Project>
