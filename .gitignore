@@ -11,3 +11,4 @@
 /ReservaHotel.Infrastructure/**/*.pdb  
 /ReservaHotel.Web/obj/  
 /ReservaHotel.Web/**/*.pdb
+/ReservaHotel.Presentacion/obj/Debug/net9.0/ref/ReservaHotel.Presentacion.dll
