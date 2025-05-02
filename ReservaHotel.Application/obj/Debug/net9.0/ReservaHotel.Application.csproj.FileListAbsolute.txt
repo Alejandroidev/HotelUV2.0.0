@@ -2,7 +2,9 @@ C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.
 C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.0\ReservaHotel.Application.dll
 C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.0\ReservaHotel.Application.pdb
 C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.0\ReservaHotel.Domain.dll
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.0\ReservaHotel.Infrastructure.dll
 C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.0\ReservaHotel.Domain.pdb
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.0\ReservaHotel.Infrastructure.pdb
 C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\obj\Debug\net9.0\ReservaHotel.Application.csproj.AssemblyReference.cache
 C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\obj\Debug\net9.0\ReservaHotel.Application.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Application\obj\Debug\net9.0\ReservaHotel.Application.AssemblyInfoInputs.cache

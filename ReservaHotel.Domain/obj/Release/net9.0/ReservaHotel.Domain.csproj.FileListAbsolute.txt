@@ -1,0 +1,12 @@
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\bin\Release\net9.0\ReservaHotel.Domain.deps.json
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\bin\Release\net9.0\ReservaHotel.Domain.dll
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\bin\Release\net9.0\ReservaHotel.Domain.pdb
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\ReservaHotel.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\ReservaHotel.Domain.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\ReservaHotel.Domain.AssemblyInfo.cs
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\ReservaHotel.Domain.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\ReservaHotel.Domain.sourcelink.json
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\ReservaHotel.Domain.dll
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\refint\ReservaHotel.Domain.dll
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\ReservaHotel.Domain.pdb
+C:\Users\USER\source\repos\HotelUV2.0.0\ReservaHotel.Domain\obj\Release\net9.0\ref\ReservaHotel.Domain.dll
