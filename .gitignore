@@ -1,11 +1,17 @@
-﻿################################################################################
-# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
-################################################################################
-/ReservaHotel.Application/obj/Debug/net9.0/ReservaHotel.Application.csproj.CoreCompileInputs.cache
-*.db
-*.db-shm
-/.vs/HotelUArcClean/CopilotIndices/17.13.431.34963
-/.vs/HotelUArcClean/FileContentIndex
-/ReservaHotel.Application/bin/Debug/net9.0/ReservaHotel.Application.dll
-/ReservaHotel.Application/bin/Debug/net9.0/ReservaHotel.Application.dll
-/ReservaHotel.Application/bin/Debug/net9.0/ReservaHotel.Application.dll
+﻿################################################################################  
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.  
+################################################################################  
+
+/ReservaHotel.Application/bin/  
+/ReservaHotel.Application/obj/  
+/ReservaHotel.Application/**/*.pdb  
+/ReservaHotel.Domain/bin/  
+/ReservaHotel.Domain/obj/  
+/ReservaHotel.Domain/**/*.pdb  
+/ReservaHotel.Infrastructure/bin/  
+/ReservaHotel.Infrastructure/obj/  
+/ReservaHotel.Infrastructure/**/*.pdb  
+/ReservaHotel.Web/bin/  
+/ReservaHotel.Web/obj/  
+/ReservaHotel.Web/**/*.pdb
+/ReservaHotel.Presentacion/bin/Debug/net9.0/ReservaHotel.Infrastructure.dll
