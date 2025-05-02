@@ -1,3 +1,9 @@
 ﻿################################################################################
 # Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
 ################################################################################
+/ReservaHotel.Application/obj/Debug/net9.0/ReservaHotel.Application.csproj.CoreCompileInputs.cache
+*.db
+*.db-shm
+/.vs/HotelUArcClean/CopilotIndices/17.13.431.34963
+/.vs/HotelUArcClean/FileContentIndex
+/ReservaHotel.Application/bin/Debug/net9.0/ReservaHotel.Application.dll
