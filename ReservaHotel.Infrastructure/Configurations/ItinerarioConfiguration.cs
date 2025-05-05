@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ReservaHotel.Domain.Entities;
+using ReservaHotel.Domain.Entities.Hotel;
 
 namespace ReservaHotel.Infrastructure.Configurations
 {
-    public class ItinerarioConfiguration : IEntityTypeConfiguration<Itinerario>
+    public class ItinerarioConfiguration : IEntityTypeConfiguration<Itinerary>
     {
-        public void Configure(EntityTypeBuilder<Itinerario> builder)
+        public void Configure(EntityTypeBuilder<Itinerary> builder)
         {
             builder.HasKey(i => i.IdItinerario);
             builder.Property(i => i.FechaEntrada)
@@ -18,7 +18,7 @@ namespace ReservaHotel.Infrastructure.Configurations
 
             builder.HasOne(i => i.Reserva)
                    .WithOne(r => r.Itinerario)
-                   .HasForeignKey<Itinerario>(i => i.IdReserva);
+                   .HasForeignKey<Itinerary>(i => i.IdReserva);
         }
     }
 }

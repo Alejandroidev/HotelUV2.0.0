@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ReservaHotel.Domain.Entities;
+using ReservaHotel.Domain.Entities.Hotel;
 
 namespace ReservaHotel.Infrastructure.Configurations
 {
-    public class ReservaConfiguration : IEntityTypeConfiguration<Reserva>
+    public class ReservaConfiguration : IEntityTypeConfiguration<Booking>
     {
-        public void Configure(EntityTypeBuilder<Reserva> builder)
+        public void Configure(EntityTypeBuilder<Booking> builder)
         {
             builder.HasKey(r => r.IdReserva);
             builder.Property(r => r.FechaCreacion)

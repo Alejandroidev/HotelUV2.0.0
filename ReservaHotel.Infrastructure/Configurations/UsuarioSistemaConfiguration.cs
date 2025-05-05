@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ReservaHotel.Domain.Entities;
+using ReservaHotel.Domain.Entities.Hotel;
 
 namespace ReservaHotel.Infrastructure.Configurations
 {
-    public class UsuarioSistemaConfiguration : IEntityTypeConfiguration<UsuarioSistema>
+    public class UsuarioSistemaConfiguration : IEntityTypeConfiguration<SystemUser>
     {
-        public void Configure(EntityTypeBuilder<UsuarioSistema> builder)
+        public void Configure(EntityTypeBuilder<SystemUser> builder)
         {
             builder.HasKey(u => u.IdUsuarioSistema);
             builder.Property(u => u.NombreUsuario).IsRequired().HasMaxLength(50);

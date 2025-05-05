@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ReservaHotel.Domain.Entities;
+using ReservaHotel.Domain.Entities.Hotel;
 
 namespace ReservaHotel.Infrastructure.Configurations
 {
-    public class TipoHabitacionConfiguration : IEntityTypeConfiguration<TipoHabitacion>
+    public class TipoHabitacionConfiguration : IEntityTypeConfiguration<TypeRoom>
     {
-        public void Configure(EntityTypeBuilder<TipoHabitacion> builder)
+        public void Configure(EntityTypeBuilder<TypeRoom> builder)
         {
             builder.HasKey(t => t.IdTipoHabitacion);
             builder.Property(t => t.NombreTipo).IsRequired().HasMaxLength(50);

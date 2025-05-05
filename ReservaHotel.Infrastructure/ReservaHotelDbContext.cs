@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ReservaHotel.Domain.Entities;
+using ReservaHotel.Domain.Entities.Hotel;
 using System.Reflection;
 
 namespace ReservaHotel.Infrastructure.Persistence
@@ -11,13 +11,13 @@ namespace ReservaHotel.Infrastructure.Persistence
         {
             Database.Migrate();
         }
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<EstadoReserva> EstadoReserva { get; set; }
-        public DbSet<Habitacion> Habitacion { get; set; }
-        public DbSet<Itinerario> Itinerarios { get; set; }
-        public DbSet<Reserva> Reservas { get; set; }
-        public DbSet<TipoHabitacion> TipoHabitacion { get; set; }
-        public DbSet<UsuarioSistema> Usuarios { get; set; }
+        public DbSet<Client> Clientes { get; set; }
+        public DbSet<StatusBooking> EstadoReserva { get; set; }
+        public DbSet<Room> Habitacion { get; set; }
+        public DbSet<Itinerary> Itinerarios { get; set; }
+        public DbSet<Booking> Reservas { get; set; }
+        public DbSet<TypeRoom> TipoHabitacion { get; set; }
+        public DbSet<SystemUser> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

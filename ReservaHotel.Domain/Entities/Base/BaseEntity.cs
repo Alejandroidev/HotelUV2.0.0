@@ -1,4 +1,4 @@
-namespace ReservaHotel.Domain.Entities;
+namespace ReservaHotel.Domain.Entities.Base;
 
 /// <summary>
 /// Generic base entity

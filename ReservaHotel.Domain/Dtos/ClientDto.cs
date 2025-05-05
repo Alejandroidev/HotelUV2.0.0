@@ -1,6 +1,8 @@
-﻿namespace ReservaHotel.Domain.Entities
+﻿using ReservaHotel.Domain.Interfaces;
+
+namespace ReservaHotel.Domain.Dto
 {
-    public class Cliente
+    public class ClientDto : IDto
     {
         public int IdCliente { get; set; }
         public string Nombre { get; set; } = null!;
@@ -9,6 +11,5 @@
         public string Telefono { get; set; } = null!;
         public string Documento { get; set; } = null!;
 
-        public ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
     }
 }
