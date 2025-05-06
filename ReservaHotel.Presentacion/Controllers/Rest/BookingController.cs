@@ -38,7 +38,7 @@ public class BookingController : ControllerBase
     /// <param name="id">Entity identifier</param>
     /// <param name="ct">Cancellation token</param>
     /// <returns>Selected entity data</returns>
-    [HttpGet("All")]
+    [HttpGet("GetAll")]
     public async Task<IActionResult> GetAll(CancellationToken ct)
     {
         var response = await _entityService.GetAll(ct);

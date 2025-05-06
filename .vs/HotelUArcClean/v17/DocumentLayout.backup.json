@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.presentacion\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|solutionrelative:reservahotel.presentacion\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.presentacion\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|solutionrelative:reservahotel.presentacion\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.presentacion\\controllers\\rest\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|solutionrelative:reservahotel.presentacion\\controllers\\rest\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.presentacion\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|solutionrelative:reservahotel.presentacion\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.presentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|solutionrelative:reservahotel.presentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.presentacion\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|solutionrelative:reservahotel.presentacion\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.presentacion\\controllers\\rest\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|solutionrelative:reservahotel.presentacion\\controllers\\rest\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C047700-E1AE-4133-A28A-ED3D6D3B8188}|ReservaHotel.Infrastructure\\ReservaHotel.Infrastructure.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.infrastructure\\hoteldbcontextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -153,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\appsettings.json",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\appsettings.json",
@@ -192,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Properties\\launchSettings.json",
@@ -205,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "BookingController.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Controllers\\Rest\\BookingController.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Controllers\\Rest\\BookingController.cs",
@@ -224,7 +224,7 @@
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Program.cs",
               "ToolTip": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Program.cs",
               "RelativeToolTip": "ReservaHotel.Presentacion\\Program.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAqwCEAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAUwBEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T01:26:54.184Z",
               "EditorCaption": ""

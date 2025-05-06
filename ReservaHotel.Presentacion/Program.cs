@@ -14,14 +14,10 @@ namespace ReservaHotel.Presentacion
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Verifica que la cadena de conexión no esté vacía
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-            Console.WriteLine($"Connection string: {connectionString}");
+            Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
             builder.Services.AddDbContext<HotelDbContext>(options =>
-                options.UseNpgsql(connectionString));
-
-            Dependencies.ConfigureServices(builder.Configuration, builder.Services);
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'HotelUColombiaContext' not found.")));
 
             builder.Services.AddCoreServices(builder.Configuration);
             builder.Services.AddWebServices();
@@ -31,13 +27,13 @@ namespace ReservaHotel.Presentacion
 
             var app = builder.Build();
 
-            // Sembrar datos iniciales
             using (var scope = app.Services.CreateScope())
             {
                 var scopedProvider = scope.ServiceProvider;
 
                 // Sedding database
-                Log.Information("Seeding Database...");
+                Console.WriteLine("Seeding Database...");
+
                 try
                 {
                     var generalContext = scopedProvider.GetRequiredService<HotelDbContext>();
@@ -45,8 +41,9 @@ namespace ReservaHotel.Presentacion
                 }
                 catch (Exception ex)
                 {
-                    Log.Error(ex, "An error occurred seeding the DB.");
+                    Console.WriteLine($"{ex.StackTrace} ERROR CONCECCION");
                 }
+
             }
 
             // Configurar el pipeline de solicitudes HTTP
