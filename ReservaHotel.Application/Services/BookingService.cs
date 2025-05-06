@@ -9,7 +9,7 @@ using ReservaHotel.Domain.Entities.Base;
 using Serilog;
 using System.Net;
 
-namespace ReservaHotel.Application.Services.Hotel
+namespace ReservaHotel.Application.Services
 {
     public class BookingService : ServiceRead<Booking, BookingDto, int, BookingSpec>, IBookingService
     {

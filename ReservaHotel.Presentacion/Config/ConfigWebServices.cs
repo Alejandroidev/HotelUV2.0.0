@@ -1,7 +1,5 @@
 using ReservaHotel.Application.Interfaces;
-using ReservaHotel.Application.Interfaces.General;
-using ReservaHotel.Application.Services.Hotel;
-
+using ReservaHotel.Application.Services;
 
 namespace ReservaHotel.Presentacion.Config;
 
@@ -11,6 +9,7 @@ public static class ConfigWebServices
     {
         #region scopes configurations
         services.AddScoped<IBookingService, BookingService>();
+        services.AddScoped<IClientService, ClientService>();
 
         #endregion
 
