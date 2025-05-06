@@ -1,11 +1,6 @@
-﻿using ReservaHotel.Domain.Dto;
-using ReservaHotel.Domain.Entities.Base;
+﻿using ReservaHotel.Domain.Entities.Base;
 using ReservaHotel.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace ReservaHotel.Domain.Entities
 {
@@ -13,6 +8,8 @@ namespace ReservaHotel.Domain.Entities
     {
         public string TypeName { get; set; } = null!;
         public string Description { get; set; } = null!;
+
+        [JsonIgnore]
         public ICollection<Room> Rooms { get; set; } = new List<Room>();
     }
 }

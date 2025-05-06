@@ -6,7 +6,6 @@ using ReservaHotel.Application.Specifications.Hotel;
 using ReservaHotel.Domain.Dto;
 using ReservaHotel.Domain.Entities;
 using ReservaHotel.Domain.Entities.Base;
-using Serilog;
 using System.Net;
 
 namespace ReservaHotel.Application.Services

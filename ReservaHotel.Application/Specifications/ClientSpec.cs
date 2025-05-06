@@ -1,11 +1,6 @@
 ﻿using Ardalis.Specification;
 using ReservaHotel.Application.Specifications.General;
 using ReservaHotel.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReservaHotel.Application.Specifications
 {
@@ -15,7 +10,7 @@ namespace ReservaHotel.Application.Specifications
 
         public ClientSpec(int id) : base(id)
         {
-            Query.Where(e => e.Id == id);
+            Query.Where(e => e.Id == id).Include(a => a.Bookings);
         }
 
         public ClientSpec(int skip, int take) : base(skip, take)

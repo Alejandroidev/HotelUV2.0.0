@@ -3,9 +3,7 @@ using ReservaHotel.Domain.Dto;
 
 namespace ReservaHotel.Application.Interfaces
 {
-    public interface IBookingService : IServiceCrud<BookingDto, int>
+    public interface IRoomService : IServiceCrud<RoomDto, int>
     {
-
-
     }
 }

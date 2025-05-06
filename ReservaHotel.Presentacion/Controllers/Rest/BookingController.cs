@@ -35,7 +35,6 @@ public class BookingController : ControllerBase
     /// <summary>
     /// Get All entities
     /// </summary>
-    /// <param name="id">Entity identifier</param>
     /// <param name="ct">Cancellation token</param>
     /// <returns>Selected entity data</returns>
     [HttpGet("GetAll")]

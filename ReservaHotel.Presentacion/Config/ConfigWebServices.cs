@@ -10,6 +10,8 @@ public static class ConfigWebServices
         #region scopes configurations
         services.AddScoped<IBookingService, BookingService>();
         services.AddScoped<IClientService, ClientService>();
+        services.AddScoped<IItineraryService, ItineraryService>();
+        services.AddScoped<IRoomService, RoomService>();
 
         #endregion
 

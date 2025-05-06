@@ -1,5 +1,6 @@
 ﻿using ReservaHotel.Domain.Entities.Base;
 using ReservaHotel.Domain.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace ReservaHotel.Domain.Entities
 {
@@ -11,6 +12,7 @@ namespace ReservaHotel.Domain.Entities
         public string Phone { get; set; } = null!;
         public string DocumentNumber { get; set; } = null!;
 
-        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+        [JsonIgnore]
+        public ICollection<Booking> Bookings { get; set; }
     }
 }

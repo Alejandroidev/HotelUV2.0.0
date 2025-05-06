@@ -10,7 +10,12 @@ namespace ReservaHotel.Application.Specifications.Hotel
 
         public BookingSpec(int id) : base(id)
         {
-            Query.Where(e => e.Id == id);
+            Query.Where(e => e.Id == id)
+                .Include(a => a.Client)
+                .Include(a => a.Itinerary)
+                .Include(a => a.Room).ThenInclude(a => a.RoomType)
+                .Include(a => a.SystemUser)
+                .Include(a => a.BookingStatus);
         }
 
         public BookingSpec(int skip, int take) : base(skip, take)
