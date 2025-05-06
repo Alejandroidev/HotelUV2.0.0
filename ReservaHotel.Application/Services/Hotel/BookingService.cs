@@ -14,7 +14,7 @@ namespace ReservaHotel.Application.Services.Hotel
     public class BookingService : ServiceRead<Booking, BookingDto, int, BookingSpec>, IBookingService
     {
 
-        public BookingService(IRepository<Booking> entityRepository, IMapper mapper, ILogger logger) : base(entityRepository, mapper, logger)
+        public BookingService(IRepository<Booking> entityRepository, IMapper mapper) : base(entityRepository, mapper)
         {
 
         }
@@ -40,7 +40,6 @@ namespace ReservaHotel.Application.Services.Hotel
 
             if (booking != null)
             {
-                _logger.Information("Added booking Type Collection: '{@entity}'", booking);
                 var bookingDto = _mapper.Map<BookingDto>(booking);
 
                 return new CustomWebResponse()
@@ -78,7 +77,6 @@ namespace ReservaHotel.Application.Services.Hotel
 
             if (entity != null)
             {
-                _logger.Information("Deleted Booking: {@entity}", entity);
                 return new CustomWebResponse();
             }
 
@@ -111,7 +109,6 @@ namespace ReservaHotel.Application.Services.Hotel
 
                 await _entityRepository.UpdateAsync(entity, ct);
 
-                _logger.Information("Updated Booking: {@entity}", entity);
 
                 var bookingDto = _mapper.Map<BookingDto>(entity);
 

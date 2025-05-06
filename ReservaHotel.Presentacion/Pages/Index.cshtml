@@ -1,9 +1,14 @@
 ﻿@page
 @model IndexModel
 @{
+
     ViewData["Title"] = "Home page";
 }
 
+
+<a asp-controller="Booking" asp-action="Get" asp-route-id="5">Ver reserva 5</a>
+
+<a href="/booking/5">Ver reserva 5</a>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="es">
 <head>
@@ -37,7 +42,6 @@
 
 
 </head>
-
 
 
     <section class="u-clearfix u-container-align-center u-grey-5 u-valign-top-lg u-valign-top-sm u-valign-top-xl u-valign-top-xs u-section-1" id="sec-8aae">

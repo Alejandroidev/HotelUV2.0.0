@@ -1,9 +1,6 @@
-using System;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using ReservaHotel.Infrastructure.Persistence;
+using Microsoft.Extensions.Logging;
 using ReservaHotel.Domain.Entities;
-using ReservaHotel.Domain.Entities.Hotel;
+using ReservaHotel.Infrastructure.Persistence;
 
 namespace ReservaHotel.Infrastructure.Seeding
 {
@@ -12,36 +9,7 @@ namespace ReservaHotel.Infrastructure.Seeding
     /// </summary>
     public static class HotelDbContextSeed
     {
-        /// <summary>
-        /// Seeds the database with default data.
-        /// </summary>
-        /// <param name="context"></param>
-        public static void Seed(HotelDbContext context)
-        {
-            context.Database.EnsureCreated();
-            // Check if the database is empty
 
-            AddStatusBookig(context);
-            // Add default booking statuses if the database is empty
-
-            AddTypeRoom(context);
-            // Add default room types if the database is empty
-
-            AddRooms(context);
-            // Add default rooms if the database is empty
-
-            AddClients(context);
-            // Add default clients if the database is empty
-
-            AddUsers(context);
-            // Add default users if the database is empty
-
-            AddBookings(context);
-            // Add default bookings if the database is empty
-
-            AddItineraries(context);
-            // Add default itineraries if the database is empty
-        }
 
         #region Private Methods
         /// <summary>
@@ -260,7 +228,7 @@ namespace ReservaHotel.Infrastructure.Seeding
                 context.SaveChanges();
             }
         }
-       
+
         /// <summary>
         /// Adds default booking statuses to the database if they do not exist.
         /// </summary>
@@ -332,6 +300,33 @@ namespace ReservaHotel.Infrastructure.Seeding
                 );
                 context.SaveChanges();
             }
+        }
+
+        public static async Task SeedAsync(HotelDbContext generalContext)
+        {
+            generalContext.Database.EnsureCreated();
+            // Check if the database is empty
+
+            AddStatusBookig(generalContext);
+            // Add default booking statuses if the database is empty
+
+            AddTypeRoom(generalContext);
+            // Add default room types if the database is empty
+
+            AddRooms(generalContext);
+            // Add default rooms if the database is empty
+
+            AddClients(generalContext);
+            // Add default clients if the database is empty
+
+            AddUsers(generalContext);
+            // Add default users if the database is empty
+
+            AddBookings(generalContext);
+            // Add default bookings if the database is empty
+
+            AddItineraries(generalContext);
+            // Add default itineraries if the database is empty
         }
 
 

@@ -1,0 +1,13 @@
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\bin\Debug\net9.0\Common.deps.json
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\bin\Debug\net9.0\Common.dll
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\bin\Debug\net9.0\Common.pdb
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\Common.csproj.AssemblyReference.cache
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\Common.AssemblyInfoInputs.cache
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\Common.AssemblyInfo.cs
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\Common.csproj.CoreCompileInputs.cache
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\Common.sourcelink.json
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\Common.dll
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\refint\Common.dll
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\Common.pdb
+C:\Users\USER\Source\Repos\HotelUV2.0.0\Common\obj\Debug\net9.0\ref\Common.dll

@@ -59,7 +59,7 @@
             },
             "AutoMapper": {
               "target": "Package",
-              "version": "[14.0.0, )"
+              "version": "[12.0.0, )"
             },
             "DevExtreme.AspNet.Core": {
               "target": "Package",

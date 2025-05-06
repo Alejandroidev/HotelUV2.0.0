@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "vNCxRPaASBI=",
+  "dgSpecHash": "fvs4ZE8ENP0=",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\Common\\Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\ardalis.specification\\9.1.0\\ardalis.specification.9.1.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\ardalis.specification.entityframeworkcore\\9.1.0\\ardalis.specification.entityframeworkcore.9.1.0.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\devextreme.aspnet.core\\23.1.6\\devextreme.aspnet.core.23.1.6.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\devextreme.aspnet.data\\2.0.0\\devextreme.aspnet.data.2.0.0.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.4.0\\microsoft.csharp.4.4.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.2\\microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.2\\microsoft.entityframeworkcore.abstractions.9.0.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.2\\microsoft.entityframeworkcore.analyzers.9.0.2.nupkg.sha512",

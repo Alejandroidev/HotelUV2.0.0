@@ -34,21 +34,15 @@ public abstract class ServiceRead<E, DTO, ET, GS> : IServiceRead<DTO, ET>
     /// </summary>
     protected readonly IMapper _mapper;
 
-    /// <summary>
-    /// General logger
-    /// </summary>
-    protected readonly ILogger _logger;
 
     /// <summary>
     /// Initialize service
     /// </summary>
     public ServiceRead(IRepository<E> entityRepository,
-        IMapper mapper,
-        ILogger logger)
+        IMapper mapper)
     {
         _entityRepository = entityRepository;
         _mapper = mapper;
-        _logger = logger;
     }
 
     /// <summary>
