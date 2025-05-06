@@ -1,11 +1,10 @@
-﻿using ReservaHotel.Domain.Entities;
+﻿using ReservaHotel.Domain.Entities.Base;
 using ReservaHotel.Domain.Interfaces;
 
-namespace ReservaHotel.Domain.Dto;
+namespace ReservaHotel.Domain.Entities;
 
-public class BookingDto : IDto
+public class Booking : BaseEntity<int>, IAggregateRoot
 {
-    public int Id { get; set; }
     public int ClientId { get; set; }
     public int RoomId { get; set; }
     public int StatusBookingId { get; set; }

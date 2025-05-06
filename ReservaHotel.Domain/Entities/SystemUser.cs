@@ -1,10 +1,10 @@
-﻿using ReservaHotel.Domain.Entities;
+﻿using ReservaHotel.Domain.Dto;
+using ReservaHotel.Domain.Entities.Base;
 using ReservaHotel.Domain.Interfaces;
 
-namespace ReservaHotel.Domain.Dto;
-public class SystemUserDto : IDto
+namespace ReservaHotel.Domain.Entities;
+public class SystemUser : BaseEntity<int>, IAggregateRoot
 {
-    public int Id { get; set; }
     public string Username { get; set; } = null!;
     public string Role { get; set; } = null!;
     public string Email { get; set; } = null!;

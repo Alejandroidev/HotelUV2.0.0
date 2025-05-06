@@ -1,9 +1,15 @@
-﻿using ReservaHotel.Domain.Entities;
+﻿using ReservaHotel.Domain.Dto;
+using ReservaHotel.Domain.Entities.Base;
 using ReservaHotel.Domain.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ReservaHotel.Domain.Dto;
+namespace ReservaHotel.Domain.Entities;
 
-public class RoomDto : IDto
+public class Room : BaseEntity<int>, IAggregateRoot
 {
     public int Id { get; set; }
     public string Number { get; set; } = null!;
@@ -11,6 +17,7 @@ public class RoomDto : IDto
     public decimal Price { get; set; }
     public int Capacity { get; set; }
     public int RoomTypeId { get; set; }
+
     public TypeRoom RoomType { get; set; } = null!;
     public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }

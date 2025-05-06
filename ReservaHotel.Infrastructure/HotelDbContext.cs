@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ReservaHotel.Domain.Entities.Hotel;
+using ReservaHotel.Domain.Entities;
 using System.Reflection;
 
 namespace ReservaHotel.Infrastructure.Persistence

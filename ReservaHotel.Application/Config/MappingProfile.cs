@@ -1,7 +1,6 @@
 using AutoMapper;
 using ReservaHotel.Domain.Dto;
-using ReservaHotel.Domain.Entities.Hotel;
-
+using ReservaHotel.Domain.Entities;
 
 namespace ReservaHotel.Application.Config
 {
@@ -16,7 +15,7 @@ namespace ReservaHotel.Application.Config
         /// return Mapping expression for more configurations options 
         public MappingProfile()
         {
-            #region Billing
+            #region hotel
             CreateMap<Booking, BookingDto>().ReverseMap();
             CreateMap<Client, ClientDto>().ReverseMap();
             CreateMap<Itinerary, ItineraryDto>().ReverseMap();

@@ -1,4 +1,4 @@
-﻿using ReservaHotel.Domain.Entities.Hotel;
+﻿using ReservaHotel.Domain.Entities;
 using ReservaHotel.Domain.Interfaces;
 
 namespace ReservaHotel.Domain.Dto

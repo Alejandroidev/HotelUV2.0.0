@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
+using ReservaHotel.Application.Interfaces;
 using ReservaHotel.Application.Interfaces.General;
-using ReservaHotel.Application.Interfaces.Hotel;
 using ReservaHotel.Application.Services.General;
 using ReservaHotel.Application.Specifications.Hotel;
 using ReservaHotel.Domain.Dto;
+using ReservaHotel.Domain.Entities;
 using ReservaHotel.Domain.Entities.Base;
-using ReservaHotel.Domain.Entities.Hotel;
 using Serilog;
 using System.Net;
 

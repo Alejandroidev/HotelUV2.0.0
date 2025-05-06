@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ReservaHotel.Domain.Entities.Hotel;
+using ReservaHotel.Domain.Entities;
 
 namespace ReservaHotel.Infrastructure.Configurations
 {
