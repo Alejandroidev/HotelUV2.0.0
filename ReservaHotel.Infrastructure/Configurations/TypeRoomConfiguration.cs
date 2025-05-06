@@ -4,13 +4,13 @@ using ReservaHotel.Domain.Entities.Hotel;
 
 namespace ReservaHotel.Infrastructure.Configurations
 {
-    public class TipoHabitacionConfiguration : IEntityTypeConfiguration<TypeRoom>
+    public class TypeRoomConfiguration : IEntityTypeConfiguration<TypeRoom>
     {
         public void Configure(EntityTypeBuilder<TypeRoom> builder)
         {
-            builder.HasKey(t => t.IdTipoHabitacion);
-            builder.Property(t => t.NombreTipo).IsRequired().HasMaxLength(50);
-            builder.Property(t => t.Descripcion).HasMaxLength(200);
+            builder.HasKey(t => t.Id);
+            builder.Property(t => t.TypeName).IsRequired().HasMaxLength(50);
+            builder.Property(t => t.Description).HasMaxLength(200);
         }
     }
 }

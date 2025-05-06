@@ -12,7 +12,7 @@ namespace ReservaHotel.Presentacion
 
             // Configurar la conexión a la base de datos
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-            builder.Services.AddDbContext<ReservaHotelDbContext>(options =>
+            builder.Services.AddDbContext<HotelDbContext>(options =>
                 options.UseNpgsql(connectionString));
 
             // Agregar Razor Pages
@@ -23,8 +23,8 @@ namespace ReservaHotel.Presentacion
             // Sembrar datos iniciales
             using (var scope = app.Services.CreateScope())
             {
-                var context = scope.ServiceProvider.GetRequiredService<ReservaHotelDbContext>();
-                ReservaHotelDbContextSeed.Seed(context);
+                var context = scope.ServiceProvider.GetRequiredService<HotelDbContext>();
+                HotelDbContextSeed.Seed(context);
             }
 
             // Configurar el pipeline de solicitudes HTTP

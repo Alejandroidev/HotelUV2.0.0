@@ -1,4 +1,5 @@
-﻿using ReservaHotel.Domain.Entities.Base;
+﻿using ReservaHotel.Domain.Dto;
+using ReservaHotel.Domain.Entities.Base;
 using ReservaHotel.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,14 @@ namespace ReservaHotel.Domain.Entities.Hotel;
 
 public class Room : BaseEntity<int>, IAggregateRoot
 {
-    public int IdHabitacion { get; set; }
-    public string Numero { get; set; } = null!;
-    public int Piso { get; set; }
-    public decimal Precio { get; set; }
-    public int Capacidad { get; set; }
-    public int IdTipoHabitacion { get; set; }
+    public int Id { get; set; }
+    public string Number { get; set; } = null!;
+    public int Floor { get; set; }
+    public decimal Price { get; set; }
+    public int Capacity { get; set; }
+    public int RoomTypeId { get; set; }
 
-    public TypeRoom TipoHabitacion { get; set; } = null!;
-    public ICollection<Booking> Reservas { get; set; } = new List<Booking>();
+    public TypeRoom RoomType { get; set; } = null!;
+    public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }
 

@@ -1,13 +1,14 @@
-﻿using ReservaHotel.Domain.Interfaces;
+﻿using ReservaHotel.Domain.Entities.Hotel;
+using ReservaHotel.Domain.Interfaces;
 
 namespace ReservaHotel.Domain.Dto
 {
     public class ItineraryDto : IDto
     {
-        public int IdItinerario { get; set; }
-        public int IdReserva { get; set; }
-        public DateTime FechaEntrada { get; set; }
-        public DateTime FechaSalida { get; set; }
-        public BookingDto Reserva { get; set; } = null!;
+        public int Id { get; set; }
+        public int BookingId { get; set; }
+        public DateTime CheckInDate { get; set; }
+        public DateTime CheckOutDate { get; set; }
+        public Booking Booking { get; set; } = null!;
     }
 }

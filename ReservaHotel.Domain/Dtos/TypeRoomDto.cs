@@ -1,12 +1,13 @@
-﻿using ReservaHotel.Domain.Interfaces;
+﻿using ReservaHotel.Domain.Entities.Hotel;
+using ReservaHotel.Domain.Interfaces;
 
 namespace ReservaHotel.Domain.Dto
 {
     public class TypeRoomDto : IDto
     {
-        public int IdTipoHabitacion { get; set; }
-        public string NombreTipo { get; set; } = null!;
-        public string Descripcion { get; set; } = null!;
-        public ICollection<RoomDto> Habitaciones { get; set; } = new List<RoomDto>();
+        public int Id { get; set; }
+        public string TypeName { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public ICollection<Room> Rooms { get; set; } = new List<Room>();
     }
 }

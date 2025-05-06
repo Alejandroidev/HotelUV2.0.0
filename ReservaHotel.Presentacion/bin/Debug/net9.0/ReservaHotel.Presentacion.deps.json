@@ -16,6 +16,63 @@
           "ReservaHotel.Presentacion.dll": {}
         }
       },
+      "Ardalis.Specification/9.1.0": {
+        "runtime": {
+          "lib/net9.0/Ardalis.Specification.dll": {
+            "assemblyVersion": "9.1.0.0",
+            "fileVersion": "9.1.0.0"
+          }
+        }
+      },
+      "Ardalis.Specification.EntityFrameworkCore/9.1.0": {
+        "dependencies": {
+          "Ardalis.Specification": "9.1.0",
+          "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Relational": "9.0.4"
+        },
+        "runtime": {
+          "lib/net9.0/Ardalis.Specification.EntityFrameworkCore.dll": {
+            "assemblyVersion": "9.1.0.0",
+            "fileVersion": "9.1.0.0"
+          }
+        }
+      },
+      "AutoMapper/14.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/AutoMapper.dll": {
+            "assemblyVersion": "14.0.0.0",
+            "fileVersion": "14.0.0.0"
+          }
+        }
+      },
+      "DevExtreme.AspNet.Core/23.1.6": {
+        "dependencies": {
+          "DevExtreme.AspNet.Data": "2.0.0",
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "runtime": {
+          "lib/net6.0/DevExtreme.AspNet.Core.dll": {
+            "assemblyVersion": "23.1.6.0",
+            "fileVersion": "23.1.6.0"
+          }
+        }
+      },
+      "DevExtreme.AspNet.Data/2.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0",
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.4.0": {},
       "Microsoft.EntityFrameworkCore/9.0.4": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "9.0.4",
@@ -226,6 +283,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.2": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.2.27524"
+          }
+        }
+      },
       "Npgsql/9.0.3": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "9.0.4"
@@ -250,10 +315,22 @@
           }
         }
       },
+      "Serilog/2.12.0": {
+        "runtime": {
+          "lib/net6.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.12.0.0"
+          }
+        }
+      },
       "ReservaHotel.Application/1.0.0": {
         "dependencies": {
+          "Ardalis.Specification.EntityFrameworkCore": "9.1.0",
+          "AutoMapper": "14.0.0",
+          "DevExtreme.AspNet.Core": "23.1.6",
           "ReservaHotel.Domain": "1.0.0",
-          "ReservaHotel.Infrastructure": "1.0.0"
+          "ReservaHotel.Infrastructure": "1.0.0",
+          "Serilog": "2.12.0"
         },
         "runtime": {
           "ReservaHotel.Application.dll": {
@@ -294,6 +371,48 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Ardalis.Specification/9.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ncH34MGz8XOQr7HaJz6U0iGiy9RTuzUAYAI2C+PkbfL4L7qrruR9mUrmg9nE2wa3ZbO88dZMpuwEuLiY7lvxbA==",
+      "path": "ardalis.specification/9.1.0",
+      "hashPath": "ardalis.specification.9.1.0.nupkg.sha512"
+    },
+    "Ardalis.Specification.EntityFrameworkCore/9.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9cPBhu+h40k0smi6o/ga6dx3hOeziEnnO8/CJA7j5JKHavbTWUq1uqtxqky90IJdGYRd8zvC/aKCqpTME6DG9Q==",
+      "path": "ardalis.specification.entityframeworkcore/9.1.0",
+      "hashPath": "ardalis.specification.entityframeworkcore.9.1.0.nupkg.sha512"
+    },
+    "AutoMapper/14.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OC+1neAPM4oCCqQj3g2GJ2shziNNhOkxmNB9cVS8jtx4JbgmRzLcUOxB9Tsz6cVPHugdkHgCaCrTjjSI0Z5sCQ==",
+      "path": "automapper/14.0.0",
+      "hashPath": "automapper.14.0.0.nupkg.sha512"
+    },
+    "DevExtreme.AspNet.Core/23.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Kfpw40gDRM0yY28k1Nx0r/TmfjB647HJLrggT30gLvpqFlZqvpBC/DT1CBhCZI05QMmL73x1dBGLU1EVE0jMdw==",
+      "path": "devextreme.aspnet.core/23.1.6",
+      "hashPath": "devextreme.aspnet.core.23.1.6.nupkg.sha512"
+    },
+    "DevExtreme.AspNet.Data/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fTItzYpiooaQGZJ3+r2VZdw1q2XvxH/uXywf/kSNiUnoPp2LtKnP3snYq05AIQrTJOuZEOHEcpbW5Q985AurTQ==",
+      "path": "devextreme.aspnet.data/2.0.0",
+      "hashPath": "devextreme.aspnet.data.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vvVR/B08YVghQ4jHEloxqw2ZWzEGE1AOA5E0DioUM3ujbXz6FD3AfB/0Jl2ohJPd0nXYGwmPe1En6HTsSriq1A==",
+      "path": "microsoft.csharp/4.4.0",
+      "hashPath": "microsoft.csharp.4.4.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/9.0.4": {
       "type": "package",
@@ -428,6 +547,13 @@
       "path": "microsoft.extensions.primitives/9.0.4",
       "hashPath": "microsoft.extensions.primitives.9.0.4.nupkg.sha512"
     },
+    "Newtonsoft.Json/13.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
+      "path": "newtonsoft.json/13.0.2",
+      "hashPath": "newtonsoft.json.13.0.2.nupkg.sha512"
+    },
     "Npgsql/9.0.3": {
       "type": "package",
       "serviceable": true,
@@ -441,6 +567,13 @@
       "sha512": "sha512-mw5vcY2IEc7L+IeGrxpp/J5OSnCcjkjAgJYCm/eD52wpZze8zsSifdqV7zXslSMmfJG2iIUGZyo3KuDtEFKwMQ==",
       "path": "npgsql.entityframeworkcore.postgresql/9.0.4",
       "hashPath": "npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512"
+    },
+    "Serilog/2.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xaiJLIdu6rYMKfQMYUZgTy8YK7SMZjB4Yk50C/u//Z4OsvxkUfSPJy4nknfvwAC34yr13q7kcyh4grbwhSxyZg==",
+      "path": "serilog/2.12.0",
+      "hashPath": "serilog.2.12.0.nupkg.sha512"
     },
     "ReservaHotel.Application/1.0.0": {
       "type": "project",

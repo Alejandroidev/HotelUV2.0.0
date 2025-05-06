@@ -1,13 +1,14 @@
-﻿using ReservaHotel.Domain.Interfaces;
+﻿using ReservaHotel.Domain.Entities.Hotel;
+using ReservaHotel.Domain.Interfaces;
 
 namespace ReservaHotel.Domain.Dto;
 public class SystemUserDto : IDto
 {
-    public int IdUsuarioSistema { get; set; }
-    public string NombreUsuario { get; set; } = null!;
-    public string Rol { get; set; } = null!;
+    public int Id { get; set; }
+    public string Username { get; set; } = null!;
+    public string Role { get; set; } = null!;
     public string Email { get; set; } = null!;
-    public string ClaveHash { get; set; } = null!;
+    public string PasswordHash { get; set; } = null!;
 
-    public ICollection<BookingDto> ReservasRegistradas { get; set; } = new List<BookingDto>();
+    public ICollection<Booking> RegisteredBookings { get; set; } = new List<Booking>();
 }

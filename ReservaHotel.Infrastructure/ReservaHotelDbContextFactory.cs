@@ -5,9 +5,9 @@ using System.IO;
 
 namespace ReservaHotel.Infrastructure.Persistence
 {
-    public class ReservaHotelDbContextFactory : IDesignTimeDbContextFactory<ReservaHotelDbContext>
+    public class ReservaHotelDbContextFactory : IDesignTimeDbContextFactory<HotelDbContext>
     {
-        public ReservaHotelDbContext CreateDbContext(string[] args)
+        public HotelDbContext CreateDbContext(string[] args)
         {
             // Cambiar la ruta base al directorio del proyecto web
             var basePath = Path.Combine(Directory.GetCurrentDirectory(), "../ReservaHotel.Web");
@@ -17,10 +17,10 @@ namespace ReservaHotel.Infrastructure.Persistence
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            var optionsBuilder = new DbContextOptionsBuilder<ReservaHotelDbContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<HotelDbContext>();
             optionsBuilder.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
 
-            return new ReservaHotelDbContext(optionsBuilder.Options);
+            return new HotelDbContext(optionsBuilder.Options);
         }
     }
 }

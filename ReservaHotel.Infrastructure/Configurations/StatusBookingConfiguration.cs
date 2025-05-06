@@ -4,12 +4,12 @@ using ReservaHotel.Domain.Entities.Hotel;
 
 namespace ReservaHotel.Infrastructure.Configurations
 {
-    public class EstadoReservaConfiguration : IEntityTypeConfiguration<StatusBooking>
+    public class StatusBookingConfiguration : IEntityTypeConfiguration<StatusBooking>
     {
         public void Configure(EntityTypeBuilder<StatusBooking> builder)
         {
-            builder.HasKey(e => e.IdEstadoReserva);
-            builder.Property(e => e.NombreEstado).IsRequired().HasMaxLength(50);
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.StatusName).IsRequired().HasMaxLength(50);
         }
     }
 }
