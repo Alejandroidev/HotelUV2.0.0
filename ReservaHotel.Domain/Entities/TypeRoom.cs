@@ -1,5 +1,6 @@
 ﻿using ReservaHotel.Domain.Entities.Base;
 using ReservaHotel.Domain.Interfaces;
+using System.Reflection.Metadata.Ecma335;
 using System.Text.Json.Serialization;
 
 namespace ReservaHotel.Domain.Entities

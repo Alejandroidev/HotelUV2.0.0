@@ -10,5 +10,4 @@ public class SystemUserDto : IDto
     public string Email { get; set; } = null!;
     public string PasswordHash { get; set; } = null!;
 
-    public ICollection<Booking> RegisteredBookings { get; set; } = new List<Booking>();
 }

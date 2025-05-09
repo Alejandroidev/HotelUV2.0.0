@@ -50,7 +50,7 @@ public class BookingController : ControllerBase
     /// <param name="bookingDto">Entity data</param>
     /// <param name="ct">Cancellation token</param>
     /// <returns>Selected entity data</returns>
-    [HttpPost()]
+    [HttpPost("Add")]
     public async Task<IActionResult> Post(BookingDto bookingDto ,CancellationToken ct)
     {
         var response = await _entityService.Add(bookingDto ,ct);
@@ -64,7 +64,7 @@ public class BookingController : ControllerBase
     /// <param name="bookingDto">Entity data</param>
     /// <param name="ct">Cancellation token</param>
     /// <returns>Selected entity data</returns>
-    [HttpPut()]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, BookingDto bookingDto, CancellationToken ct)
     {
         var response = await _entityService.Update(id, bookingDto, ct);

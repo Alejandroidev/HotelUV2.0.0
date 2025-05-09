@@ -10,6 +10,4 @@ public class SystemUser : BaseEntity<int>, IAggregateRoot
     public string Role { get; set; } = null!;
     public string Email { get; set; } = null!;
     public string PasswordHash { get; set; } = null!;
-    [JsonIgnore]
-    public ICollection<Booking> RegisteredBookings { get; set; } = new List<Booking>();
 }

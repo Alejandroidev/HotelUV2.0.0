@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using ReservaHotel.Infrastructure.Persistence;
 using ReservaHotel.Infrastructure.Seeding;
 using ReservaHotel.Presentacion.Config;
-using Serilog;
 
 namespace ReservaHotel.Presentacion
 {

@@ -9,13 +9,19 @@ namespace ReservaHotel.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<Booking> builder)
         {
             builder.HasKey(r => r.Id);
+
             builder.Property(r => r.CreationDate)
+                .HasColumnName("creation_date")
                  .HasColumnType("timestamp with time zone")
                  .IsRequired();
+
             builder.Property(r => r.StartDate)
+                .HasColumnName("start_date")
                  .HasColumnType("timestamp with time zone")
                  .IsRequired();
+
             builder.Property(r => r.EndDate)
+                .HasColumnName("end_date")
                 .HasColumnType("timestamp with time zone")
                 .IsRequired();
 
@@ -31,9 +37,6 @@ namespace ReservaHotel.Infrastructure.Configurations
                    .WithMany(e => e.Bookings)
                    .HasForeignKey(r => r.StatusBookingId);
 
-            builder.HasOne(r => r.SystemUser)
-                   .WithMany(u => u.RegisteredBookings)
-                   .HasForeignKey(r => r.SystemUserId);
         }
     }
 }

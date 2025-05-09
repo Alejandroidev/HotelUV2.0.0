@@ -299,8 +299,12 @@ namespace ReservaHotel.Infrastructure.Seeding
                     }
                 );
                 context.SaveChanges();
+
+
+
             }
         }
+
 
         public static async Task SeedAsync(HotelDbContext generalContext)
         {
