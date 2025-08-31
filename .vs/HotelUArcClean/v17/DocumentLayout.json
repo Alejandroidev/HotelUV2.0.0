@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\.gitignore .gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore .gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|c:\\users\\user\\source\\repos\\hoteluv2.0.0\\reservahotel.presentacion\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1245EAA1-93C8-4A05-955D-7A1E323F32DD}|ReservaHotel.Presentacion\\ReservaHotel.Presentacion.csproj|solutionrelative:reservahotel.presentacion\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -190,7 +194,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 24,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -218,7 +222,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 0,
+              "Title": ".gitignore .gitignore",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\.gitignore .gitignore",
+              "RelativeDocumentMoniker": ".gitignore .gitignore",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\.gitignore .gitignore",
+              "RelativeToolTip": ".gitignore .gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-31T23:50:22.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Pages\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Pages\\_ViewImports.cshtml",
@@ -230,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ConfigWebServices.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Config\\ConfigWebServices.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Config\\ConfigWebServices.cs",
@@ -242,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "RoomSpec.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\Specifications\\RoomSpec.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Application\\Specifications\\RoomSpec.cs",
@@ -254,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "RoomDto.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Dtos\\RoomDto.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Dtos\\RoomDto.cs",
@@ -266,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "RoomController.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Controllers\\Rest\\RoomController.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Controllers\\Rest\\RoomController.cs",
@@ -278,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "RoomService.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\Services\\RoomService.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Application\\Services\\RoomService.cs",
@@ -290,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "ServiceRead.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Services\\ServiceRead.cs",
               "RelativeDocumentMoniker": "Common\\Services\\ServiceRead.cs",
@@ -302,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "IServiceAdd.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Interfaces\\General\\IServiceAdd.cs",
               "RelativeDocumentMoniker": "Common\\Interfaces\\General\\IServiceAdd.cs",
@@ -314,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "IServiceCrud.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Interfaces\\General\\IServiceCrud.cs",
               "RelativeDocumentMoniker": "Common\\Interfaces\\General\\IServiceCrud.cs",
@@ -326,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "IDto.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Interfaces\\Data\\IDto.cs",
               "RelativeDocumentMoniker": "Common\\Interfaces\\Data\\IDto.cs",
@@ -338,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "IAggregateRoot.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Interfaces\\Data\\IAggregateRoot.cs",
               "RelativeDocumentMoniker": "Common\\Interfaces\\Data\\IAggregateRoot.cs",
@@ -350,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "CustomConfig.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Helper\\CustomConfig.cs",
               "RelativeDocumentMoniker": "Common\\Helper\\CustomConfig.cs",
@@ -362,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "WebToolsBase.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Entitys\\Presentacion\\WebToolsBase.cs",
               "RelativeDocumentMoniker": "Common\\Entitys\\Presentacion\\WebToolsBase.cs",
@@ -374,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "CustomWebResponse.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Entitys\\Base\\CustomWebResponse.cs",
               "RelativeDocumentMoniker": "Common\\Entitys\\Base\\CustomWebResponse.cs",
@@ -386,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Entitys\\Base\\BaseEntity.cs",
               "RelativeDocumentMoniker": "Common\\Entitys\\Base\\BaseEntity.cs",
@@ -398,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "LogConstants.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Constans\\LogConstants.cs",
               "RelativeDocumentMoniker": "Common\\Constans\\LogConstants.cs",
@@ -410,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "nicepage.css",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\wwwroot\\css\\nicepage.css",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\wwwroot\\css\\nicepage.css",
@@ -422,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "index.css",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\wwwroot\\css\\index.css",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\wwwroot\\css\\index.css",
@@ -434,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Pages\\Index.cshtml",
@@ -447,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Properties\\launchSettings.json",
@@ -459,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\appsettings.json",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\appsettings.json",
@@ -471,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "IRoomService.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\Interfaces\\IRoomService.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Application\\Interfaces\\IRoomService.cs",
@@ -483,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "ClientDto.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Dtos\\ClientDto.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Dtos\\ClientDto.cs",
@@ -495,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "ReservaHotel.Domain.csproj",
               "DocumentMoniker": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\ReservaHotel.Domain.csproj",
@@ -507,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "ReservaHotel.Infrastructure.csproj",
               "DocumentMoniker": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\ReservaHotel.Infrastructure.csproj",
               "RelativeDocumentMoniker": "ReservaHotel.Infrastructure\\ReservaHotel.Infrastructure.csproj",
@@ -519,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\Config\\MappingProfile.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Application\\Config\\MappingProfile.cs",
@@ -531,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "IBookingService.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\Interfaces\\IBookingService.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Application\\Interfaces\\IBookingService.cs",
@@ -543,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "BookingSpec.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\Specifications\\BookingSpec.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Application\\Specifications\\BookingSpec.cs",
@@ -555,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "SystemUser.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Entities\\SystemUser.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Entities\\SystemUser.cs",
@@ -567,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Program.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Program.cs",
@@ -579,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "GeneralSpecification.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Specifications\\GeneralSpecification.cs",
               "RelativeDocumentMoniker": "Common\\Specifications\\GeneralSpecification.cs",
@@ -591,7 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "TypeRoom.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Entities\\TypeRoom.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Entities\\TypeRoom.cs",
@@ -603,7 +620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "BookingDto.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Dtos\\BookingDto.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Dtos\\BookingDto.cs",
@@ -615,7 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "StatusBooking.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Entities\\StatusBooking.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Entities\\StatusBooking.cs",
@@ -627,7 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Room.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Entities\\Room.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Entities\\Room.cs",
@@ -639,7 +656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Itinerary.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Entities\\Itinerary.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Entities\\Itinerary.cs",
@@ -651,7 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Entities\\Client.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Entities\\Client.cs",
@@ -663,7 +680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "BookingController.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Presentacion\\Controllers\\Rest\\BookingController.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Presentacion\\Controllers\\Rest\\BookingController.cs",
@@ -675,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HotelDbContextSeed.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\HotelDbContextSeed.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Infrastructure\\HotelDbContextSeed.cs",
@@ -687,7 +704,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HotelDbContext.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\HotelDbContext.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Infrastructure\\HotelDbContext.cs",
@@ -699,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EfRepository.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\EfRepository.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Infrastructure\\EfRepository.cs",
@@ -711,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Dependencies.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\Dependencies.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Infrastructure\\Dependencies.cs",
@@ -723,7 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BookingConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Infrastructure\\Configurations\\BookingConfiguration.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Infrastructure\\Configurations\\BookingConfiguration.cs",
@@ -735,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "BookingService.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Application\\Services\\BookingService.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Application\\Services\\BookingService.cs",
@@ -747,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Booking.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\Entities\\Booking.cs",
               "RelativeDocumentMoniker": "ReservaHotel.Domain\\Entities\\Booking.cs",
@@ -756,6 +773,10 @@
               "ViewState": "AgIAACAAAAAAAAAAAAAIwAcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T23:33:59.657Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         },

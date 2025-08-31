@@ -11,8 +11,15 @@
 
 # Archivos de compilación
 ## Directorios de salida de compilación
-bin/
-obj/
+[Bb]in/
+[Oo]bj/
+
+## Archivos de compilación específicos
+*.dll
+*.exe
+*.pdb
+*.nupkg
+*.snk
 
 # Archivos de publicación
 ## Directorios de publicación
@@ -25,6 +32,9 @@ appsettings.Development.json
 ## Archivos de secretos de usuario
 secrets.json
 **/secrets.json
+
+## Archivos de configuración de lanzamiento
+**/Properties/launchSettings.json
 
 # Archivos de caché y temporales de IDEs
 ## Caché de ReSharper

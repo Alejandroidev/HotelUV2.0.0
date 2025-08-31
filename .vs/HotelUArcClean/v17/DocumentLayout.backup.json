@@ -226,8 +226,7 @@
               "RelativeToolTip": "ReservaHotel.Presentacion\\Pages\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-19T20:59:56.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T20:59:56.592Z"
             },
             {
               "$type": "Document",
@@ -239,8 +238,7 @@
               "RelativeToolTip": "ReservaHotel.Presentacion\\Config\\ConfigWebServices.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T14:18:06.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T14:18:06.533Z"
             },
             {
               "$type": "Document",
@@ -276,8 +274,7 @@
               "RelativeToolTip": "ReservaHotel.Presentacion\\Controllers\\Rest\\RoomController.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAACkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:43:49.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T02:43:49.995Z"
             },
             {
               "$type": "Document",
@@ -289,8 +286,7 @@
               "RelativeToolTip": "ReservaHotel.Application\\Services\\RoomService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T01:51:44.928Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T01:51:44.928Z"
             },
             {
               "$type": "Document",
@@ -326,8 +322,7 @@
               "RelativeToolTip": "Common\\Interfaces\\General\\IServiceCrud.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T12:17:57.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T12:17:57.568Z"
             },
             {
               "$type": "Document",
@@ -544,8 +539,7 @@
               "RelativeToolTip": "ReservaHotel.Application\\Interfaces\\IBookingService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:28.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:28.357Z"
             },
             {
               "$type": "Document",
@@ -557,8 +551,7 @@
               "RelativeToolTip": "ReservaHotel.Application\\Specifications\\BookingSpec.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAA1wA0AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:22.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:22.488Z"
             },
             {
               "$type": "Document",
@@ -570,8 +563,7 @@
               "RelativeToolTip": "ReservaHotel.Domain\\Entities\\SystemUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:57:05.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:57:05.883Z"
             },
             {
               "$type": "Document",
@@ -607,8 +599,7 @@
               "RelativeToolTip": "ReservaHotel.Domain\\Entities\\TypeRoom.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T02:16:17.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T02:16:17.608Z"
             },
             {
               "$type": "Document",
@@ -632,8 +623,7 @@
               "RelativeToolTip": "ReservaHotel.Domain\\Entities\\StatusBooking.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:56:43.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:56:43.929Z"
             },
             {
               "$type": "Document",
@@ -645,8 +635,7 @@
               "RelativeToolTip": "ReservaHotel.Domain\\Entities\\Room.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:56:40.144Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:56:40.144Z"
             },
             {
               "$type": "Document",
@@ -658,8 +647,7 @@
               "RelativeToolTip": "ReservaHotel.Domain\\Entities\\Itinerary.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:56:35.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:56:35.722Z"
             },
             {
               "$type": "Document",
@@ -671,8 +659,7 @@
               "RelativeToolTip": "ReservaHotel.Domain\\Entities\\Client.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:56:30.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:56:30.216Z"
             },
             {
               "$type": "Document",
@@ -684,8 +671,7 @@
               "RelativeToolTip": "ReservaHotel.Presentacion\\Controllers\\Rest\\BookingController.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAwwE8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:49.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:49.376Z"
             },
             {
               "$type": "Document",
@@ -697,8 +683,7 @@
               "RelativeToolTip": "ReservaHotel.Infrastructure\\HotelDbContextSeed.cs",
               "ViewState": "AgIAANMAAAAAAAAAAAAcwMoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:46.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:46.495Z"
             },
             {
               "$type": "Document",
@@ -710,8 +695,7 @@
               "RelativeToolTip": "ReservaHotel.Infrastructure\\HotelDbContext.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:45.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:45.133Z"
             },
             {
               "$type": "Document",
@@ -723,8 +707,7 @@
               "RelativeToolTip": "ReservaHotel.Infrastructure\\EfRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:43.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:43.822Z"
             },
             {
               "$type": "Document",
@@ -736,8 +719,7 @@
               "RelativeToolTip": "ReservaHotel.Infrastructure\\Dependencies.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:42.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:42.505Z"
             },
             {
               "$type": "Document",
@@ -749,8 +731,7 @@
               "RelativeToolTip": "ReservaHotel.Infrastructure\\Configurations\\BookingConfiguration.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:36.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:36.018Z"
             },
             {
               "$type": "Document",
@@ -762,8 +743,7 @@
               "RelativeToolTip": "ReservaHotel.Application\\Services\\BookingService.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAgwA8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T23:34:25.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T23:34:25.79Z"
             },
             {
               "$type": "Document",
