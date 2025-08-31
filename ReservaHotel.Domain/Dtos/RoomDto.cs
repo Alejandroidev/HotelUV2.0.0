@@ -11,7 +11,7 @@ public class RoomDto : IDto
     public decimal Price { get; set; }
     public int Capacity { get; set; }
     public int RoomTypeId { get; set; }
-    public TypeRoom RoomType { get; set; } = null!;
+    //public TypeRoom RoomType { get; set; } = null!;
     public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }
 

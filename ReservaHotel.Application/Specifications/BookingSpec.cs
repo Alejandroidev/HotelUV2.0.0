@@ -40,7 +40,7 @@ namespace ReservaHotel.Application.Specifications.Hotel
             Query.Where(e => e.Client.FirstName.Contains(clientName) || e.Client.LastName.Contains(clientName))
                 .Where(e => e.Room.Number.Contains(roomNumber))
                 .Where(e => e.Itinerary.CheckInDate == checkInDate && e.Itinerary.CheckOutDate == checkOutDate)
-                .Skip(skip).Take(take);
+                .Skip(skip).Take(take).OrderBy(a => a.Id);
         }
 
         public BookingSpec(string clientName, string document, int skip, int take) : base(skip, take)

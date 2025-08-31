@@ -14,9 +14,9 @@ public class BookingDto : IDto
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
 
-    //public Client Client { get; set; } = null!;
-    //public Room Room { get; set; } = null!;
-    //public StatusBooking BookingStatus { get; set; } = null!;
-    //public SystemUser SystemUser { get; set; } = null!;
-    //public Itinerary Itinerary { get; set; } = null!;
+    public Client? Client { get; set; } = null!;
+    public Room? Room { get; set; } = null!;
+    public StatusBooking? BookingStatus { get; set; } = null!;
+    public SystemUser? SystemUser { get; set; } = null!;
+    public Itinerary? Itinerary { get; set; } = null!;
 }

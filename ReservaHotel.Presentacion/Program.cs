@@ -24,6 +24,19 @@ namespace ReservaHotel.Presentacion
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddRazorPages();
 
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("http://localhost:4200") // <-- ¡AQUÍ ES DONDE ESPECIFICAS EL ORIGEN DE TU APP ANGULAR!
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                                      // .AllowCredentials(); // Descomenta si manejas cookies, sesiones o tokens de autenticación con credenciales
+                                  });
+            });
+
             var app = builder.Build();
 
             using (var scope = app.Services.CreateScope())
@@ -55,6 +68,7 @@ namespace ReservaHotel.Presentacion
 
             app.MapControllers();
             app.UseRouting();
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
             app.UseStaticFiles();
             app.MapRazorPages();

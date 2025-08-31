@@ -122,5 +122,7 @@ namespace ReservaHotel.Application.Services
                 Message = "Server error",
             };
         }
+
+
     }
 }

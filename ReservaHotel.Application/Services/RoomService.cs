@@ -37,7 +37,7 @@ namespace ReservaHotel.Application.Services
 
             if (room != null)
             {
-                var roomDto = _mapper.Map<BookingDto>(room);
+                var roomDto = _mapper.Map<RoomDto>(room);
 
                 return new CustomWebResponse()
                 {

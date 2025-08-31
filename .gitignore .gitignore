@@ -1,0 +1,58 @@
+# Archivos y carpetas generados por Visual Studio
+## Carpeta .vs generada por Visual Studio
+.vs/
+
+## Archivos de opciones de usuario de Visual Studio
+*.suo
+*.user
+
+## Archivos de opciones de sitio de Visual Studio
+*.sln.docstates
+
+# Archivos de compilación
+## Directorios de salida de compilación
+bin/
+obj/
+
+# Archivos de publicación
+## Directorios de publicación
+**/publish/
+
+# Archivos de configuración local
+## Archivos de configuración de desarrollo que pueden contener secretos
+appsettings.Development.json
+
+## Archivos de secretos de usuario
+secrets.json
+**/secrets.json
+
+# Archivos de caché y temporales de IDEs
+## Caché de ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+## Archivos de Rider
+.idea/
+
+# Archivos de sistema operativo
+## Archivos de metadatos de macOS
+.DS_Store
+
+## Vistas en miniatura de Windows
+Thumbs.db
+
+# Archivos de registro
+## Archivos de registro de la aplicación
+*.log
+logs/
+
+# Dependencias de paquetes
+## Directorio de paquetes de NuGet
+packages/
+
+## Archivos de bloqueo de paquetes (si se gestionan de otra manera)
+# project.lock.json
+
+# Herramientas de front-end
+## Directorio de módulos de Node.js
+node_modules/

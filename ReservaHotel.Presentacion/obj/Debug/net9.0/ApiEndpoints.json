@@ -1,27 +1,6 @@
 [
   {
     "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.BookingController",
-    "Method": "Put",
-    "RelativePath": "booking",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "bookingDto",
-        "Type": "ReservaHotel.Domain.Dto.BookingDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.BookingController",
     "Method": "Get",
     "RelativePath": "booking/{id}",
     "HttpMethod": "GET",
@@ -31,6 +10,27 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.BookingController",
+    "Method": "Put",
+    "RelativePath": "booking/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "bookingDto",
+        "Type": "ReservaHotel.Domain.Dto.BookingDto",
         "IsRequired": true
       }
     ],
