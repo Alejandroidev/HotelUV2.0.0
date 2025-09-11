@@ -1,339 +1,230 @@
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using ReservaHotel.Domain.Entities;
-using ReservaHotel.Infrastructure.Persistence;
+using ReservaHotel.Domain.Enums;
+using System.Security.Cryptography;
+using System.Text;
 
-namespace ReservaHotel.Infrastructure.Seeding
+namespace ReservaHotel.Infrastructure.Data
 {
-    /// <summary>
-    /// Class for seeding the database with default data.
-    /// </summary>
     public static class HotelDbContextSeed
     {
-
-
-        #region Private Methods
-        /// <summary>
-        /// Adds default itineraries to the database if they do not exist.
-        /// </summary>
-        /// <param name="context"></param>
-        private static void AddItineraries(HotelDbContext context)
+        public static async Task SeedAsync(HotelDbContext context)
         {
-            if (!context.Itinerary.Any())
+            // La creación de la base de datos debe manejarse con migraciones.
+            // await context.Database.EnsureCreatedAsync();
+
+            await SeedLocationsAsync(context);
+            await SeedAmenitiesAsync(context);
+            await SeedStatusAndTypesAsync(context);
+            await SeedRoomsAndAmenitiesAsync(context);
+            await SeedClientsAsync(context);
+            await SeedEmployeesAndUsersAsync(context);
+            await SeedBookingsAndRelatedAsync(context);
+            await SeedCrmAndPqrAsync(context);
+        }
+
+        private static async Task SeedLocationsAsync(HotelDbContext context)
+        {
+            if (!await context.Locations.AnyAsync())
             {
-                context.Itinerary.AddRange(
-                    new Itinerary
-                    {
-                        BookingId = 1,
-                        CheckInDate = DateTime.Now.AddDays(1).ToUniversalTime(),
-                        CheckOutDate = DateTime.Now.AddDays(3).ToUniversalTime()
-                    },
-                    new Itinerary
-                    {
-                        BookingId = 2,
-                        CheckInDate = DateTime.Now.AddDays(2).ToUniversalTime(),
-                        CheckOutDate = DateTime.Now.AddDays(4).ToUniversalTime()
-                    }
+                await context.Locations.AddRangeAsync(
+                    new Location { Name = "Bogotá", Address = "Av. El Dorado #123" },
+                    new Location { Name = "Medellín", Address = "Cra. 43A #7-50, El Poblado" }
                 );
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
 
-        /// <summary>
-        /// Adds default bookings to the database if they do not exist.
-        /// </summary>
-        /// <param name="context"></param>
-        private static void AddBookings(HotelDbContext context)
+        private static async Task SeedAmenitiesAsync(HotelDbContext context)
         {
-            if (!context.Booking.Any())
+            if (!await context.Amenities.AnyAsync())
             {
-                context.Booking.AddRange(
-                    new Booking
-                    {
-                        ClientId = 1,
-                        RoomId = 1,
-                        StatusBookingId = 1,
-                        SystemUserId = 1,
-                        CreationDate = DateTime.Now.ToUniversalTime(),
-                        StartDate = DateTime.Now.AddDays(1).ToUniversalTime(),
-                        EndDate = DateTime.Now.AddDays(3).ToUniversalTime()
-                    },
-                    new Booking
-                    {
-                        ClientId = 2,
-                        RoomId = 3,
-                        StatusBookingId = 1,
-                        SystemUserId = 3,
-                        CreationDate = DateTime.Now.ToUniversalTime(),
-                        StartDate = DateTime.Now.AddDays(4).ToUniversalTime(),
-                        EndDate = DateTime.Now.AddDays(6).ToUniversalTime()
-                    }
+                await context.Amenities.AddRangeAsync(
+                    new Amenity { Name = "Wi-Fi", Description = "High-speed internet access" },
+                    new Amenity { Name = "Air Conditioning", Description = "Climate control" },
+                    new Amenity { Name = "Pool", Description = "Outdoor swimming pool" },
+                    new Amenity { Name = "Gym", Description = "Fitness center access" }
                 );
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
 
-        /// <summary>
-        /// Adds default users to the database if they do not exist.
-        /// </summary>
-        /// <param name="context"></param>
-        private static void AddUsers(HotelDbContext context)
+        private static async Task SeedStatusAndTypesAsync(HotelDbContext context)
         {
-            if (!context.SystemUser.Any())
+            if (!await context.StatusBookings.AnyAsync())
             {
-                context.SystemUser.AddRange(
-                    new SystemUser
-                    {
-                        Username = "admin",
-                        Role = "Administrador",
-                        Email = "admin@example.com",
-                        PasswordHash = "hashedpassword1"
-                    },
-                    new SystemUser
-                    {
-                        Username = "reception1",
-                        Role = "Recepcionista",
-                        Email = "reception1@example.com",
-                        PasswordHash = "hashedpassword2"
-                    },
-                    new SystemUser
-                    {
-                        Username = "reception2",
-                        Role = "Recepcionista",
-                        Email = "reception2@example.com",
-                        PasswordHash = "hashedpassword3"
-                    },
-                    new SystemUser
-                    {
-                        Username = "manager",
-                        Role = "Gerente",
-                        Email = "manager@example.com",
-                        PasswordHash = "hashedpassword4"
-                    },
-                    new SystemUser
-                    {
-                        Username = "cleaning",
-                        Role = "Limpieza",
-                        Email = "cleaning@example.com",
-                        PasswordHash = "hashedpassword5"
-                    }
+                await context.StatusBookings.AddRangeAsync(
+                    new StatusBooking { StatusName = "Confirmed" },
+                    new StatusBooking { StatusName = "Pending" },
+                    new StatusBooking { StatusName = "Cancelled" }
                 );
-                context.SaveChanges();
+            }
+
+            if (!await context.TypeRooms.AnyAsync())
+            {
+                await context.TypeRooms.AddRangeAsync(
+                    new TypeRoom { Name = "Standard", Description = "A standard room for one or two guests." },
+                    new TypeRoom { Name = "Suite", Description = "A luxurious suite with extra space." },
+                    new TypeRoom { Name = "Family", Description = "A room designed for families." }
+                );
+            }
+            await context.SaveChangesAsync();
+        }
+
+        private static async Task SeedRoomsAndAmenitiesAsync(HotelDbContext context)
+        {
+            if (!await context.Rooms.AnyAsync())
+            {
+                var locationBogota = await context.Locations.FirstAsync(l => l.Name == "Bogotá");
+                var locationMedellin = await context.Locations.FirstAsync(l => l.Name == "Medellín");
+                var typeStandard = await context.TypeRooms.FirstAsync(t => t.Name == "Standard");
+                var typeSuite = await context.TypeRooms.FirstAsync(t => t.Name == "Suite");
+
+                var rooms = new List<Room>
+                {
+                    new Room { Name = "101", Description = "Standard room with a city view.", Price = 150000, Capacity = 2, Status = RoomStatus.Available, IsFeatured = true, TypeRoomId = typeStandard.Id, LocationId = locationBogota.Id },
+                    new Room { Name = "102", Description = "Standard room, quiet area.", Price = 160000, Capacity = 2, Status = RoomStatus.Cleaning, IsFeatured = false, TypeRoomId = typeStandard.Id, LocationId = locationBogota.Id },
+                    new Room { Name = "201", Description = "Luxury suite with a balcony.", Price = 350000, Capacity = 3, Status = RoomStatus.Available, IsFeatured = true, TypeRoomId = typeSuite.Id, LocationId = locationMedellin.Id }
+                };
+                await context.Rooms.AddRangeAsync(rooms);
+                await context.SaveChangesAsync();
+
+                // Seed Room Amenities
+                var wifi = await context.Amenities.FirstAsync(a => a.Name == "Wi-Fi");
+                var ac = await context.Amenities.FirstAsync(a => a.Name == "Air Conditioning");
+                var pool = await context.Amenities.FirstAsync(a => a.Name == "Pool");
+
+                await context.RoomAmenities.AddRangeAsync(
+                    new RoomAmenity { RoomId = rooms[0].Id, AmenityId = wifi.Id },
+                    new RoomAmenity { RoomId = rooms[0].Id, AmenityId = ac.Id },
+                    new RoomAmenity { RoomId = rooms[1].Id, AmenityId = wifi.Id },
+                    new RoomAmenity { RoomId = rooms[2].Id, AmenityId = wifi.Id },
+                    new RoomAmenity { RoomId = rooms[2].Id, AmenityId = ac.Id },
+                    new RoomAmenity { RoomId = rooms[2].Id, AmenityId = pool.Id }
+                );
+                await context.SaveChangesAsync();
             }
         }
 
-        /// <summary>
-        /// Adds default clients to the database if they do not exist.
-        /// </summary>
-        /// <param name="context"></param>
-        private static void AddClients(HotelDbContext context)
+        private static async Task SeedClientsAsync(HotelDbContext context)
         {
-            if (!context.Clients.Any())
+            if (!await context.Clients.AnyAsync())
             {
-                context.Clients.AddRange(
-                    new Client
-                    {
-                        FirstName = "Juan",
-                        LastName = "Pérez",
-                        Email = "juan.perez@example.com",
-                        Phone = "123456789",
-                        DocumentNumber = "12345678"
-                    },
-                    new Client
-                    {
-                        FirstName = "María",
-                        LastName = "Gómez",
-                        Email = "maria.gomez@example.com",
-                        Phone = "987654321",
-                        DocumentNumber = "87654321"
-                    },
-                    new Client
-                    {
-                        FirstName = "Carlos",
-                        LastName = "López",
-                        Email = "carlos.lopez@example.com",
-                        Phone = "456789123",
-                        DocumentNumber = "45678912"
-                    },
-                    new Client
-                    {
-                        FirstName = "Ana",
-                        LastName = "Martínez",
-                        Email = "ana.martinez@example.com",
-                        Phone = "789123456",
-                        DocumentNumber = "78912345"
-                    },
-                    new Client
-                    {
-                        FirstName = "Luis",
-                        LastName = "Ramírez",
-                        Email = "luis.ramirez@example.com",
-                        Phone = "321654987",
-                        DocumentNumber = "32165498"
-                    }
+                await context.Clients.AddRangeAsync(
+                    new Client { Name = "Carlos", LastName = "Rodriguez", Email = "carlos.r@example.com", PhoneNumber = "3101234567" },
+                    new Client { Name = "Ana", LastName = "Gomez", Email = "ana.g@example.com", PhoneNumber = "3209876543" }
                 );
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
 
-        /// <summary>
-        /// Adds default rooms to the database if they do not exist.
-        /// </summary>
-        /// <param name="context"></param>
-        private static void AddRooms(HotelDbContext context)
+        private static async Task SeedEmployeesAndUsersAsync(HotelDbContext context)
         {
-            if (!context.Room.Any())
+            if (!await context.Employees.AnyAsync())
             {
-                context.Room.AddRange(
-                    new Room
-                    {
-                        Number = "101",
-                        Floor = 1,
-                        Price = 80000,
-                        Capacity = 1,
-                        RoomTypeId = 1
-                    },
-                    new Room
-                    {
-                        Number = "102",
-                        Floor = 1,
-                        Price = 125000,
-                        Capacity = 2,
-                        RoomTypeId = 2
-                    },
-                    new Room
-                    {
-                        Number = "201",
-                        Floor = 2,
-                        Price = 150000,
-                        Capacity = 2,
-                        RoomTypeId = 3
-                    },
-                    new Room
-                    {
-                        Number = "202",
-                        Floor = 2,
-                        Price = 200000,
-                        Capacity = 4,
-                        RoomTypeId = 4
-                    },
-                    new Room
-                    {
-                        Number = "301",
-                        Floor = 3,
-                        Price = 300000,
-                        Capacity = 1,
-                        RoomTypeId = 5
-                    }
-                );
-                context.SaveChanges();
+                var locationBogota = await context.Locations.FirstAsync(l => l.Name == "Bogotá");
+                var locationMedellin = await context.Locations.FirstAsync(l => l.Name == "Medellín");
+
+                // Employee with user account
+                var employeeAdmin = new Employee { FirstName = "Admin", LastName = "User", NationalId = "1000000001", Position = "System Administrator", Department = "IT", HireDate = DateTime.UtcNow.AddYears(-2), Email = "admin@hotel.com", PhoneNumber = "3001112233", LocationId = locationBogota.Id };
+                CreatePasswordHash("Password123!", out byte[] adminHash, out byte[] adminSalt);
+                var userAdmin = new User { Username = "admin", IsActive = true, PasswordHash = adminHash, PasswordSalt = adminSalt, Employee = employeeAdmin };
+
+                // Employee without user account
+                var employeeHousekeeping = new Employee { FirstName = "Maria", LastName = "Lopez", NationalId = "1000000002", Position = "Housekeeper", Department = "Housekeeping", HireDate = DateTime.UtcNow.AddMonths(-6), Email = "maria.l@hotel.com", PhoneNumber = "3004445566", LocationId = locationMedellin.Id };
+
+                await context.Users.AddAsync(userAdmin);
+                await context.Employees.AddAsync(employeeHousekeeping);
+                await context.SaveChangesAsync();
             }
         }
 
-        /// <summary>
-        /// Adds default booking statuses to the database if they do not exist.
-        /// </summary>
-        /// <param name="context"></param>
-        private static void AddStatusBookig(HotelDbContext context)
+        private static async Task SeedBookingsAndRelatedAsync(HotelDbContext context)
         {
-            if (!context.StatusBooking.Any())
+            if (!await context.Bookings.AnyAsync())
             {
-                context.StatusBooking.AddRange(
-                    new StatusBooking
-                    {
-                        StatusName = "Pendiente"
-                    },
-                    new StatusBooking
-                    {
-                        StatusName = "Confirmada"
-                    },
-                    new StatusBooking
-                    {
-                        StatusName = "Cancelada"
-                    },
-                    new StatusBooking
-                    {
-                        StatusName = "En Proceso"
-                    },
-                    new StatusBooking
-                    {
-                        StatusName = "Finalizada"
-                    }
-                );
-                context.SaveChanges();
+                var clientCarlos = await context.Clients.FirstAsync(c => c.Email == "carlos.r@example.com");
+                var room101 = await context.Rooms.FirstAsync(r => r.Name == "101");
+                var statusConfirmed = await context.StatusBookings.FirstAsync(s => s.StatusName == "Confirmed");
+
+                var booking = new Booking
+                {
+                    CheckInDate = DateTime.UtcNow.AddDays(10),
+                    CheckOutDate = DateTime.UtcNow.AddDays(15),
+                    NumberOfGuests = 2,
+                    TotalPrice = room101.Price * 5,
+                    ClientId = clientCarlos.Id,
+                    RoomId = room101.Id,
+                    StatusBookingId = statusConfirmed.Id
+                };
+
+                // Reemplaza la línea con el error CS0117 y ortografía incorrecta:
+                var itinerary = new Itinerary
+                {
+                    Booking = booking,
+                    CheckInDate = booking.CheckInDate,
+                    CheckOutDate = booking.CheckOutDate
+                    // No existe la propiedad Details en Itinerary, así que se elimina.
+                    // Si necesitas guardar detalles, deberías agregar una propiedad en la entidad Itinerary.
+                };
+
+                var invoice = new Invoice
+                {
+                    Booking = booking,
+                    Cufe = Guid.NewGuid().ToString(), // Placeholder CUFE
+                    IssueDate = DateTime.UtcNow,
+                    DueDate = DateTime.UtcNow.AddDays(30),
+                    Subtotal = booking.TotalPrice,
+                    TaxAmount = booking.TotalPrice * 0.19m, // Example 19% IVA
+                    TotalAmount = booking.TotalPrice * 1.19m,
+                    Status = InvoiceStatus.Issued
+                };
+
+                var invoiceItem = new InvoiceItem { Invoice = invoice, Description = $"Stay in Room {room101.Name}", Quantity = 5, UnitPrice = room101.Price, Total = booking.TotalPrice };
+
+                await context.Bookings.AddAsync(booking);
+                await context.Itineraries.AddAsync(itinerary);
+                await context.Invoices.AddAsync(invoice);
+                await context.InvoiceItems.AddAsync(invoiceItem);
+
+                await context.SaveChangesAsync();
             }
         }
 
-        /// <summary>
-        /// Adds default room types to the database if they do not exist.
-        /// </summary>
-        /// <param name="context"></param>
-        private static void AddTypeRoom(HotelDbContext context)
+        private static async Task SeedCrmAndPqrAsync(HotelDbContext context)
         {
-            if (!context.TypeRoom.Any())
+            if (!await context.CustomerInteractions.AnyAsync())
             {
-                context.TypeRoom.AddRange(
-                    new TypeRoom
-                    {
-                        TypeName = "Individual",
-                        Description = "Habitación para una persona"
-                    },
-                    new TypeRoom
-                    {
-                        TypeName = "Doble",
-                        Description = "Habitación para dos personas"
-                    },
-                    new TypeRoom
-                    {
-                        TypeName = "Suite",
-                        Description = "Habitación de lujo"
-                    },
-                    new TypeRoom
-                    {
-                        TypeName = "Familiar",
-                        Description = "Habitación para familias"
-                    },
-                    new TypeRoom
-                    {
-                        TypeName = "Económica",
-                        Description = "Habitación económica"
-                    }
+                var clientAna = await context.Clients.FirstAsync(c => c.Email == "ana.g@example.com");
+                var adminUser = await context.Users.FirstAsync(u => u.Username == "admin");
+
+                await context.CustomerInteractions.AddAsync(
+                    new CustomerInteraction { ClientId = clientAna.Id, InteractionDate = DateTime.UtcNow.AddDays(-5), InteractionType = InteractionType.PhoneCall, Notes = "Client called to ask about pool hours.", SystemUserId = adminUser.Id }
                 );
-                context.SaveChanges();
+            }
 
+            if (!await context.PqrCases.AnyAsync())
+            {
+                var clientCarlos = await context.Clients.FirstAsync(c => c.Email == "carlos.r@example.com");
+                var booking = await context.Bookings.FirstAsync(b => b.ClientId == clientCarlos.Id);
 
+                await context.PqrCases.AddAsync(
+                    new PqrCase { ClientId = clientCarlos.Id, BookingId = booking.Id, PqrType = PqrType.Petition, Status = PqrStatus.Open, Subject = "Late check-out request", Description = "Requesting a late check-out until 2 PM.", CreatedAt = DateTime.UtcNow.AddDays(-1) }
+                );
+            }
+            await context.SaveChangesAsync();
+        }
 
+        /// <summary>
+        /// Creates a password hash and salt from a given password.
+        /// </summary>
+        private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        {
+            using (var hmac = new HMACSHA512())
+            {
+                passwordSalt = hmac.Key;
+                passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
         }
-
-
-        public static async Task SeedAsync(HotelDbContext generalContext)
-        {
-            generalContext.Database.EnsureCreated();
-            // Check if the database is empty
-
-            AddStatusBookig(generalContext);
-            // Add default booking statuses if the database is empty
-
-            AddTypeRoom(generalContext);
-            // Add default room types if the database is empty
-
-            AddRooms(generalContext);
-            // Add default rooms if the database is empty
-
-            AddClients(generalContext);
-            // Add default clients if the database is empty
-
-            AddUsers(generalContext);
-            // Add default users if the database is empty
-
-            AddBookings(generalContext);
-            // Add default bookings if the database is empty
-
-            AddItineraries(generalContext);
-            // Add default itineraries if the database is empty
-        }
-
-
-        #endregion
     }
 }

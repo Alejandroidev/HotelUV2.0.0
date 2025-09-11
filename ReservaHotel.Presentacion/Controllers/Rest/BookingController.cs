@@ -2,7 +2,7 @@
 using Common.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using ReservaHotel.Application.Interfaces;
-using ReservaHotel.Domain.Dto;
+using ReservaHotel.Application.Common.Dtos;
 
 namespace ReservaHotel.Presentacion.Controllers.Rest;
 

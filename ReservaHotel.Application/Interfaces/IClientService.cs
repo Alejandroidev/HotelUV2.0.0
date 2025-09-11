@@ -1,5 +1,5 @@
 ﻿using ReservaHotel.Application.Interfaces.General;
-using ReservaHotel.Domain.Dto;
+using ReservaHotel.Application.Common.Dtos;
 
 namespace ReservaHotel.Application.Interfaces
 {

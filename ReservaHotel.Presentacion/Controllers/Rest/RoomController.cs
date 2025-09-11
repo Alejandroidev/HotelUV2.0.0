@@ -1,7 +1,7 @@
 ﻿using Common.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using ReservaHotel.Application.Interfaces;
-using ReservaHotel.Domain.Dto;
+using ReservaHotel.Application.Common.Dtos;
 
 namespace ReservaHotel.Presentacion.Controllers.Rest
 {
@@ -28,6 +28,19 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         public async Task<IActionResult> Get(int id, CancellationToken ct)
         {
             var response = await _entityService.Get(id, ct);
+            return _webTools.CustomResponse(response);
+        }
+
+        /// <summary>
+        /// Get entity by identifier
+        /// </summary>
+        /// <param name="id">Entity identifier</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns>Selected entity data</returns>
+        [HttpGet("GetByIsFeatured")]
+        public async Task<IActionResult> Get(bool IsFeatured, CancellationToken ct)
+        {
+            var response = await _entityService.GetAvailableRooms(IsFeatured, ct);
             return _webTools.CustomResponse(response);
         }
 

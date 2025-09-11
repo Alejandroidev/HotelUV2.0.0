@@ -1,7 +1,7 @@
-using ReservaHotel.Domain.Interfaces;
-using ReservaHotel.Infrastructure.Persistence;
 using Ardalis.Specification.EntityFrameworkCore;
 using ReservaHotel.Application.Interfaces.General;
+using ReservaHotel.Domain.Interfaces;
+using ReservaHotel.Infrastructure.Data;
 
 namespace ReservaHotel.Infrastructure;
 

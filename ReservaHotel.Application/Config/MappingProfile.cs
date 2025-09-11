@@ -1,5 +1,5 @@
 using AutoMapper;
-using ReservaHotel.Domain.Dto;
+using ReservaHotel.Application.Common.Dtos;
 using ReservaHotel.Domain.Entities;
 
 namespace ReservaHotel.Application.Config

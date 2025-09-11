@@ -1,28 +1,72 @@
-﻿using ReservaHotel.Domain.Dto;
-using ReservaHotel.Domain.Entities.Base;
+﻿using ReservaHotel.Domain.Entities.Base;
+using ReservaHotel.Domain.Enums;
 using ReservaHotel.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace ReservaHotel.Domain.Entities;
-
-public class Room : BaseEntity<int>, IAggregateRoot
+namespace ReservaHotel.Domain.Entities
 {
-    public int Id { get; set; }
-    public string Number { get; set; } = null!;
-    public int Floor { get; set; }
-    public decimal Price { get; set; }
-    public int Capacity { get; set; }
-    public int RoomTypeId { get; set; }
+    /// <summary>
+    /// Represents a hotel room.
+    /// </summary>
+    public class Room : BaseEntity<Guid>, IAggregateRoot
+    {
+        /// <summary>
+        /// Gets or sets the unique identifier for the type of room.
+        /// </summary>
+        public Guid TypeRoomId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name or number of the room.
+        /// </summary>
+        public string Name { get; set; }
 
-    public TypeRoom RoomType { get; set; } = null!;
+        /// <summary>
+        /// Gets or sets a description of the room.
+        /// </summary>
+        public string Description { get; set; }
 
-    [JsonIgnore]
-    public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+        /// <summary>
+        /// Gets or sets the price per night for the room.
+        /// </summary>
+        public decimal Price { get; set; }
+
+        /// <summary>
+        /// Gets or sets the maximum number of guests the room can accommodate.
+        /// </summary>
+        public int Capacity { get; set; }
+
+        /// <summary>
+        /// Gets or sets the current operational status of the room.
+        /// </summary>
+        public RoomStatus Status { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the room is featured or recommended.
+        /// </summary>
+        public bool IsFeatured { get; set; }
+
+        /// <summary>
+        /// Gets or sets the navigation property for the room's type.
+        /// </summary>
+        public TypeRoom TypeRoom { get; set; }
+
+        /// <summary>
+        /// Gets or sets the unique identifier for the location of the room.
+        /// </summary>
+        public Guid LocationId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the navigation property for the location.
+        /// </summary>
+        public Location Location { get; set; }
+
+        /// <summary>
+        /// Gets or sets the collection of bookings associated with this room.
+        /// </summary>
+        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+
+        /// <summary>
+        /// Gets or sets the collection of amenities for this room.
+        /// </summary>
+        public ICollection<RoomAmenity> RoomAmenities { get; set; } = new List<RoomAmenity>();
+    }
 }
-

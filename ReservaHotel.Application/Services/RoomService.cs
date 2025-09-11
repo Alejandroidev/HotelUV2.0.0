@@ -3,8 +3,6 @@ using ReservaHotel.Application.Interfaces;
 using ReservaHotel.Application.Interfaces.General;
 using ReservaHotel.Application.Services.General;
 using ReservaHotel.Application.Specifications;
-using ReservaHotel.Application.Specifications.Hotel;
-using ReservaHotel.Domain.Dto;
 using ReservaHotel.Domain.Entities;
 using ReservaHotel.Domain.Entities.Base;
 using System;
@@ -13,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using ReservaHotel.Application.Common.Dtos;
 
 namespace ReservaHotel.Application.Services
 {
@@ -22,87 +21,26 @@ namespace ReservaHotel.Application.Services
         {
         }
 
-        public async Task<CustomWebResponse> Add(RoomDto entityData, CancellationToken ct = default)
+        public Task<CustomWebResponse> Add(RoomDto entityData, CancellationToken ct = default)
         {
-            Room room = new()
-            {
-                Capacity = entityData.Capacity,
-                RoomTypeId = entityData.RoomTypeId,
-                Price = entityData.Price,
-                Floor = entityData.Floor,
-                Number = entityData.Number
-            };
-
-            room = await _entityRepository.AddAsync(room, ct);
-
-            if (room != null)
-            {
-                var roomDto = _mapper.Map<RoomDto>(room);
-
-                return new CustomWebResponse()
-                {
-                    ResponseBody = roomDto
-                };
-            }
-
-            return new CustomWebResponse(true)
-            {
-                StatusCode = HttpStatusCode.InternalServerError,
-                Message = "Server error",
-            };
+            throw new NotImplementedException();
         }
 
-        public async Task<CustomWebResponse> Delete(int id, CancellationToken ct = default)
+        public Task<CustomWebResponse> Delete(int id, CancellationToken ct = default)
         {
-            var roomSpec = new RoomSpec(id);
-            var room = await _entityRepository.FirstOrDefaultAsync(roomSpec, ct);
-            if (room != null)
-            {
-                await _entityRepository.DeleteAsync(room, ct);
-
-                return new CustomWebResponse();
-
-            }
-            return new CustomWebResponse()
-            {
-                Message = "not found",
-                ResponseBody = "not found",
-                StatusCode = HttpStatusCode.NotFound,
-                Success = false
-
-            };
-
+            throw new NotImplementedException();
         }
 
-        public async Task<CustomWebResponse> Update(int id, RoomDto entityData, CancellationToken ct = default)
+        public Task<CustomWebResponse> Update(int id, RoomDto entityData, CancellationToken ct = default)
         {
-            var roomSpec = new RoomSpec(id);
-            var room = await _entityRepository.FirstOrDefaultAsync(roomSpec, ct);
+            throw new NotImplementedException();
+        }
 
-            if (room != null)
-            {
-                room.Number = entityData.Number;
-                room.Price = entityData.Price;
-                room.Floor = entityData.Floor;
-                room.RoomTypeId = entityData.RoomTypeId;
-                room.Capacity = entityData.Capacity;
-                await _entityRepository.UpdateAsync(room, ct);
-                var roomDto = _mapper.Map<BookingDto>(room);
-
-                return new CustomWebResponse()
-                {
-                    ResponseBody = roomDto
-                };
-            }
-
-            return new CustomWebResponse()
-            {
-                Message = "not found",
-                ResponseBody = "not found",
-                StatusCode = HttpStatusCode.NotFound,
-                Success = false
-
-            };
+        public async Task<CustomWebResponse> GetAvailableRooms(bool IsFeatured, CancellationToken ct = default)
+        {
+            int totalRooms = await _entityRepository.CountAsync(ct);
+            RoomSpec roomSpec = new RoomSpec(totalRooms);
+            throw new NotImplementedException();
         }
     }
 }
