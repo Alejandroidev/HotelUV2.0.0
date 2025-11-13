@@ -977,9 +977,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj",
       "projectName": "ReservaHotel.Domain",
-      "projectPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj",
+      "projectPath": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\ReservaHotel.Domain\\ReservaHotel.Domain.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\ReservaHotel.Domain\\obj\\",
       "projectStyle": "PackageReference",
@@ -1005,8 +1005,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Common.csproj": {
-              "projectPath": "C:\\Users\\USER\\source\\repos\\HotelUV2.0.0\\Common\\Common.csproj"
+            "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\USER\\Source\\Repos\\HotelUV2.0.0\\Common\\Common.csproj"
             }
           }
         }
