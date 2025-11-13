@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.Clients.Commands{ public record DeleteClientCommand(Guid Id): IRequest<CustomWebResponse>; }

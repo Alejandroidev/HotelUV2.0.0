@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.Rooms.Queries{ public record GetFeaturedRoomsQuery(bool IsFeatured): IRequest<CustomWebResponse>; }

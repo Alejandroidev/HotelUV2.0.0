@@ -1,19 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ReservaHotel.Infrastructure.Persistence;
+using ReservaHotel.Infrastructure.Data;
 using System;
 
-namespace It270.MedicalManagement.Billing.Infrastructure.Data;
+namespace ReservaHotel.Infrastructure;
 
 public static class Dependencies
 {
-    private static readonly string _connectionString = Environment.GetEnvironmentVariable("SYSTEM_CS_MAIN");
+    private static readonly string? _connectionString = Environment.GetEnvironmentVariable("SYSTEM_CS_MAIN");
 
     public static void ConfigureServices(IConfiguration configuration, IServiceCollection services)
     {
-        services.AddDbContext<HotelDbContext>(c =>
-            c.UseNpgsql(_connectionString)
-        );
+        var cs = _connectionString ?? configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("No connection string configured");
+        services.AddDbContext<HotelDbContext>(c => c.UseNpgsql(cs));
     }
 }

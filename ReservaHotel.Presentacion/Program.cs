@@ -1,8 +1,7 @@
-using It270.MedicalManagement.Billing.Infrastructure.Data;
 using It270.MedicalManagement.Billing.Presentation.WebApi.Config;
 using Microsoft.EntityFrameworkCore;
-using ReservaHotel.Infrastructure.Persistence;
-using ReservaHotel.Infrastructure.Seeding;
+using ReservaHotel.Infrastructure;
+using ReservaHotel.Infrastructure.Data;
 using ReservaHotel.Presentacion.Config;
 
 namespace ReservaHotel.Presentacion
@@ -16,7 +15,7 @@ namespace ReservaHotel.Presentacion
             Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
             builder.Services.AddDbContext<HotelDbContext>(options =>
-                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'HotelUColombiaContext' not found.")));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 
             builder.Services.AddCoreServices(builder.Configuration);
             builder.Services.AddWebServices();
@@ -30,35 +29,14 @@ namespace ReservaHotel.Presentacion
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   policy =>
                                   {
-                                      policy.WithOrigins("http://localhost:4200") // <-- ¡AQUÍ ES DONDE ESPECIFICAS EL ORIGEN DE TU APP ANGULAR!
+                                      policy.WithOrigins("http://localhost:4200")
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
-                                      // .AllowCredentials(); // Descomenta si manejas cookies, sesiones o tokens de autenticación con credenciales
                                   });
             });
 
             var app = builder.Build();
 
-            using (var scope = app.Services.CreateScope())
-            {
-                var scopedProvider = scope.ServiceProvider;
-
-                // Sedding database
-                Console.WriteLine("Seeding Database...");
-
-                try
-                {
-                    var generalContext = scopedProvider.GetRequiredService<HotelDbContext>();
-                    await HotelDbContextSeed.SeedAsync(generalContext);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"{ex.StackTrace} ERROR CONCECCION");
-                }
-
-            }
-
-            // Configurar el pipeline de solicitudes HTTP
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");

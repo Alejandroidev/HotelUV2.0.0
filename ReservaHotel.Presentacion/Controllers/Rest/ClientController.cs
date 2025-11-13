@@ -1,7 +1,10 @@
 ﻿using Common.Interfaces;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ReservaHotel.Application.Interfaces;
 using ReservaHotel.Application.Common.Dtos;
+using ReservaHotel.Application.Clients.Commands;
+using ReservaHotel.Application.Clients.Queries;
+using System;
 
 namespace ReservaHotel.Presentacion.Controllers.Rest
 {
@@ -10,13 +13,12 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
     public class ClientController : ControllerBase
     {
         private readonly IWebTools _webTools;
-        private readonly IClientService _entityService;
+        private readonly IMediator _mediator;
 
-
-        public ClientController(IWebTools webTools, IClientService entityService)
+        public ClientController(IWebTools webTools, IMediator mediator)
         {
             _webTools = webTools;
-            _entityService = entityService;
+            _mediator = mediator;
         }
 
         /// <summary>
@@ -26,9 +28,9 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         /// <param name="ct">Cancellation token</param>
         /// <returns>Selected entity data</returns>
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id, CancellationToken ct)
+        public async Task<IActionResult> Get(Guid id, CancellationToken ct)
         {
-            var response = await _entityService.Get(id, ct);
+            var response = await _mediator.Send(new GetClientByIdQuery(id), ct);
             return _webTools.CustomResponse(response);
         }
 
@@ -37,10 +39,10 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         /// </summary>
         /// <param name="ct">Cancellation token</param>
         /// <returns>Selected entity data</returns>
-        [HttpGet("GetAll")]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAll(CancellationToken ct)
         {
-            var response = await _entityService.GetAll(ct);
+            var response = await _mediator.Send(new GetClientsQuery(), ct);
             return _webTools.CustomResponse(response);
         }
 
@@ -50,10 +52,10 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         /// <param name="clientDto">Entity data</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns>Selected entity data</returns>
-        [HttpPost()]
-        public async Task<IActionResult> Post(ClientDto clientDto, CancellationToken ct)
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] ClientDto dto, CancellationToken ct)
         {
-            var response = await _entityService.Add(clientDto, ct);
+            var response = await _mediator.Send(new CreateClientCommand(dto), ct);
             return _webTools.CustomResponse(response);
         }
 
@@ -63,13 +65,25 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         /// <param name="clientDto">Entity data</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns>Selected entity data</returns>
-        [HttpPut()]
-        public async Task<IActionResult> Put(int id, ClientDto clientDto, CancellationToken ct)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(Guid id, [FromBody] ClientDto dto, CancellationToken ct)
         {
-            var response = await _entityService.Update(id, clientDto, ct);
+            dto.Id = id;
+            var response = await _mediator.Send(new UpdateClientCommand(id, dto), ct);
             return _webTools.CustomResponse(response);
         }
 
-
+        /// <summary>
+        /// Delete Client
+        /// </summary>
+        /// <param name="id">Entity identifier</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns>Selected entity data</returns>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+        {
+            var response = await _mediator.Send(new DeleteClientCommand(id), ct);
+            return _webTools.CustomResponse(response);
+        }
     }
 }

@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Application.Common.Dtos;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.Clients.Commands{ public record CreateClientCommand(ClientDto Client): IRequest<CustomWebResponse>; }

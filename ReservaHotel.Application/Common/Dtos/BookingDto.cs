@@ -1,22 +1,16 @@
-﻿using ReservaHotel.Domain.Entities;
-using ReservaHotel.Domain.Interfaces;
+﻿using ReservaHotel.Domain.Interfaces;
+using System;
 
 namespace ReservaHotel.Application.Common.Dtos;
 
 public class BookingDto : IDto
 {
-    public int Id { get; set; }
-    public int ClientId { get; set; }
-    public int RoomId { get; set; }
-    public int StatusBookingId { get; set; }
-    public int SystemUserId { get; set; }
-    public DateTime CreationDate { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-
-    public Client? Client { get; set; } = null!;
-    public Room? Room { get; set; } = null!;
-    public StatusBooking? BookingStatus { get; set; } = null!;
-    public SystemUser? SystemUser { get; set; } = null!;
-    public Itinerary? Itinerary { get; set; } = null!;
+    public Guid Id { get; set; }
+    public Guid ClientId { get; set; }
+    public Guid RoomId { get; set; }
+    public Guid StatusBookingId { get; set; }
+    public DateTime CheckInDate { get; set; }
+    public DateTime CheckOutDate { get; set; }
+    public int NumberOfGuests { get; set; }
+    public decimal TotalPrice { get; set; }
 }

@@ -1,0 +1,1 @@
+using Ardalis.Specification;using ReservaHotel.Domain.Entities;namespace ReservaHotel.Application.Rooms.Specifications{ public sealed class FeaturedRoomsSpec: Specification<Room>{ public FeaturedRoomsSpec(bool isFeatured){ Query.Where(r=> r.IsFeatured==isFeatured); } } }

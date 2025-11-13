@@ -1,87 +1,90 @@
-
 using Common.Interfaces;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ReservaHotel.Application.Interfaces;
 using ReservaHotel.Application.Common.Dtos;
+using ReservaHotel.Application.Bookings.Commands;
+using ReservaHotel.Application.Bookings.Queries;
+using System;
 
-namespace ReservaHotel.Presentacion.Controllers.Rest;
-
-[ApiController]
-[Route("booking")]
-public class BookingController : ControllerBase
+namespace ReservaHotel.Presentacion.Controllers.Rest
 {
-    private readonly IWebTools _webTools;
-    private readonly IBookingService _entityService;
-
-    public BookingController(IWebTools webTools, IBookingService entityService)
+    [ApiController]
+    [Route("booking")]
+    public class BookingController : ControllerBase
     {
-        _webTools = webTools;
-        _entityService = entityService;
-    }
+        private readonly IWebTools _webTools;
+        private readonly IMediator _mediator;
 
-    /// <summary>
-    /// Get entity by identifier
-    /// </summary>
-    /// <param name="id">Entity identifier</param>
-    /// <param name="ct">Cancellation token</param>
-    /// <returns>Selected entity data</returns>
-    [HttpGet("{id}")]
-    public async Task<IActionResult> Get(int id, CancellationToken ct)
-    {
-        var response = await _entityService.Get(id, ct);
-        return _webTools.CustomResponse(response);
-    }
+        public BookingController(IWebTools webTools, IMediator mediator)
+        {
+            _webTools = webTools;
+            _mediator = mediator;
+        }
 
-    /// <summary>
-    /// Get All entities
-    /// </summary>
-    /// <param name="ct">Cancellation token</param>
-    /// <returns>Selected entity data</returns>
-    [HttpGet("GetAll")]
-    public async Task<IActionResult> GetAll(CancellationToken ct)
-    {
-        var response = await _entityService.GetAll(ct);
-        return _webTools.CustomResponse(response);
-    }
+        /// <summary>
+        /// Get entity by identifier
+        /// </summary>
+        /// <param name="id">Entity identifier</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns>Selected entity data</returns>
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(Guid id, CancellationToken ct)
+        {
+            var response = await _mediator.Send(new GetBookingByIdQuery(id), ct);
+            return _webTools.CustomResponse(response);
+        }
 
-    /// <summary>
-    /// Add Booking
-    /// </summary>
-    /// <param name="bookingDto">Entity data</param>
-    /// <param name="ct">Cancellation token</param>
-    /// <returns>Selected entity data</returns>
-    [HttpPost("Add")]
-    public async Task<IActionResult> Post(BookingDto bookingDto ,CancellationToken ct)
-    {
-        var response = await _entityService.Add(bookingDto ,ct);
-        return _webTools.CustomResponse(response);
-    }
+        /// <summary>
+        /// Get All entities
+        /// </summary>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns>Selected entity data</returns>
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAll(CancellationToken ct)
+        {
+            var response = await _mediator.Send(new GetBookingsQuery(), ct);
+            return _webTools.CustomResponse(response);
+        }
 
-    /// <summary>
-    /// Update entity
-    /// </summary>
-    /// <param name="id">Entity identifier</param>
-    /// <param name="bookingDto">Entity data</param>
-    /// <param name="ct">Cancellation token</param>
-    /// <returns>Selected entity data</returns>
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, BookingDto bookingDto, CancellationToken ct)
-    {
-        var response = await _entityService.Update(id, bookingDto, ct);
-        return _webTools.CustomResponse(response);
-    }
+        /// <summary>
+        /// Add Booking
+        /// </summary>
+        /// <param name="bookingDto">Entity data</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns>Selected entity data</returns>
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] BookingDto dto, CancellationToken ct)
+        {
+            var response = await _mediator.Send(new CreateBookingCommand(dto), ct);
+            return _webTools.CustomResponse(response);
+        }
 
-    /// <summary>
-    /// Delete entity
-    /// </summary>
-    /// <param name="id">Entity identifier</param>
-    /// <param name="ct">Cancellation token</param>
-    /// <returns>Selected entity data</returns>
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id, CancellationToken ct)
-    {
-        var response = await _entityService.Delete(id, ct);
-        return _webTools.CustomResponse(response);
-    }
+        /// <summary>
+        /// Update entity
+        /// </summary>
+        /// <param name="id">Entity identifier</param>
+        /// <param name="bookingDto">Entity data</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns>Selected entity data</returns>
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(Guid id, [FromBody] BookingDto dto, CancellationToken ct)
+        {
+            dto.Id = id;
+            var response = await _mediator.Send(new UpdateBookingCommand(id, dto), ct);
+            return _webTools.CustomResponse(response);
+        }
 
+        /// <summary>
+        /// Delete entity
+        /// </summary>
+        /// <param name="id">Entity identifier</param>
+        /// <param name="ct">Cancellation token</param>
+        /// <returns>Selected entity data</returns>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
+        {
+            var response = await _mediator.Send(new DeleteBookingCommand(id), ct);
+            return _webTools.CustomResponse(response);
+        }
+    }
 }
