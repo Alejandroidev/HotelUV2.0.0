@@ -1,4 +1,5 @@
 ﻿using ReservaHotel.Domain.Entities.Base;
+using ReservaHotel.Domain.Interfaces;
 using System;
 
 namespace ReservaHotel.Domain.Entities
@@ -6,7 +7,7 @@ namespace ReservaHotel.Domain.Entities
     /// <summary>
     /// Represents a single line item on an invoice.
     /// </summary>
-    public class InvoiceItem : BaseEntity<Guid>
+    public class InvoiceItem : BaseEntity<Guid>, IAggregateRoot
     {
         /// <summary>
         /// Gets or sets the unique identifier for the invoice this item belongs to.

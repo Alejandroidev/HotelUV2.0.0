@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.RoomAmenities.Queries{ public record GetAmenitiesByRoomQuery(Guid RoomId): IRequest<CustomWebResponse>; }

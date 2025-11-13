@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Application.Common.Dtos;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.PqrCases.Commands{ public record UpdatePqrCaseCommand(Guid Id, PqrCaseDto PqrCase): IRequest<CustomWebResponse>; }

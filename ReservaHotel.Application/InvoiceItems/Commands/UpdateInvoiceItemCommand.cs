@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Application.Common.Dtos;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.InvoiceItems.Commands{ public record UpdateInvoiceItemCommand(Guid Id, InvoiceItemDto InvoiceItem): IRequest<CustomWebResponse>; }

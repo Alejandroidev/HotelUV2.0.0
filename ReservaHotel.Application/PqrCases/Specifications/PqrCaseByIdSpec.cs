@@ -1,0 +1,1 @@
+using Ardalis.Specification;using ReservaHotel.Domain.Entities;using System;namespace ReservaHotel.Application.PqrCases.Specifications{ public sealed class PqrCaseByIdSpec: Specification<PqrCase>{ public PqrCaseByIdSpec(Guid id){ Query.Where(x=> x.Id==id).Include(x=> x.Booking).Include(x=> x.Client); } } }

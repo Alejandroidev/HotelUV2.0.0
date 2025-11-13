@@ -1,4 +1,5 @@
 ﻿using ReservaHotel.Domain.Entities.Base;
+using ReservaHotel.Domain.Interfaces;
 using System;
 
 namespace ReservaHotel.Domain.Entities
@@ -6,7 +7,7 @@ namespace ReservaHotel.Domain.Entities
     /// <summary>
     /// Represents the join entity for the many-to-many relationship between Room and Amenity.
     /// </summary>
-    public class RoomAmenity : BaseEntity<Guid>
+    public class RoomAmenity : BaseEntity<Guid>, IAggregateRoot
     {
         /// <summary>
         /// Gets or sets the unique identifier for the room.

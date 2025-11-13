@@ -1,0 +1,1 @@
+using Ardalis.Specification;using ReservaHotel.Domain.Entities;using System;namespace ReservaHotel.Application.InvoiceItems.Specifications{ public sealed class InvoiceItemByIdSpec: Specification<InvoiceItem>{ public InvoiceItemByIdSpec(Guid id){ Query.Where(x=> x.Id==id).Include(x=> x.Invoice); } } }

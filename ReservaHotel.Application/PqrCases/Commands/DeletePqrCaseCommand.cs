@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.PqrCases.Commands{ public record DeletePqrCaseCommand(Guid Id): IRequest<CustomWebResponse>; }

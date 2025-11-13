@@ -26,6 +26,11 @@ namespace ReservaHotel.Application.Config
             CreateMap<Amenity, AmenityDto>().ReverseMap();
             CreateMap<Location, LocationDto>().ReverseMap();
             CreateMap<Employee, EmployeeDto>().ReverseMap();
+            CreateMap<Invoice, InvoiceDto>().ReverseMap();
+            CreateMap<InvoiceItem, InvoiceItemDto>().ReverseMap();
+            CreateMap<CustomerInteraction, CustomerInteractionDto>().ReverseMap();
+            CreateMap<PqrCase, PqrCaseDto>().ReverseMap();
+            CreateMap<User, UserDto>().ReverseMap();
             #endregion
         }
     }

@@ -1,0 +1,1 @@
+using Ardalis.Specification;using ReservaHotel.Domain.Entities;using System;namespace ReservaHotel.Application.RoomAmenities.Specifications{ public sealed class RoomAmenitiesByAmenitySpec: Specification<RoomAmenity>{ public RoomAmenitiesByAmenitySpec(Guid amenityId){ Query.Where(x=> x.AmenityId==amenityId).Include(x=> x.Room); } } }

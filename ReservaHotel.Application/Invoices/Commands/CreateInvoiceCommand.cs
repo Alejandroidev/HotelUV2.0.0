@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Application.Common.Dtos;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.Invoices.Commands{ public record CreateInvoiceCommand(InvoiceDto Invoice): IRequest<CustomWebResponse>; }

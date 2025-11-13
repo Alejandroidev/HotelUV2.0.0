@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Application.Common.Dtos;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.Users.Commands{ public record UpdateUserCommand(Guid Id, UserDto User): IRequest<CustomWebResponse>; }

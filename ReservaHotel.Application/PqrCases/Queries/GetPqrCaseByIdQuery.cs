@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.PqrCases.Queries{ public record GetPqrCaseByIdQuery(Guid Id): IRequest<CustomWebResponse>; }

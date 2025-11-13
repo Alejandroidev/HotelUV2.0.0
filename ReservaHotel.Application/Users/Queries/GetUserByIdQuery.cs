@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.Users.Queries{ public record GetUserByIdQuery(Guid Id): IRequest<CustomWebResponse>; }

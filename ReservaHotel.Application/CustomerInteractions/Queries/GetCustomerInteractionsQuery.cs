@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.CustomerInteractions.Queries{ public record GetCustomerInteractionsQuery(): IRequest<CustomWebResponse>; }

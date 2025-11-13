@@ -1,0 +1,1 @@
+using Ardalis.Specification;using ReservaHotel.Domain.Entities;using System;namespace ReservaHotel.Application.CustomerInteractions.Specifications{ public sealed class CustomerInteractionByIdSpec: Specification<CustomerInteraction>{ public CustomerInteractionByIdSpec(Guid id){ Query.Where(x=> x.Id==id); } } }

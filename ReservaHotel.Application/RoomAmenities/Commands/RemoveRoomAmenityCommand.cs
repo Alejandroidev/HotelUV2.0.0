@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;using System;namespace ReservaHotel.Application.RoomAmenities.Commands{ public record RemoveRoomAmenityCommand(Guid RoomId, Guid AmenityId): IRequest<CustomWebResponse>; }

@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Application.Common.Dtos;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.CustomerInteractions.Commands{ public record CreateCustomerInteractionCommand(CustomerInteractionDto CustomerInteraction): IRequest<CustomWebResponse>; }

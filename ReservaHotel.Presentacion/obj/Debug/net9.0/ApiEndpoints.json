@@ -26,6 +26,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.AmenityController",
+    "Method": "Post",
+    "RelativePath": "amenity",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.AmenityDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.AmenityController",
+    "Method": "Get",
+    "RelativePath": "amenity/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.AmenityController",
+    "Method": "Put",
+    "RelativePath": "amenity/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.AmenityDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.AmenityController",
+    "Method": "Delete",
+    "RelativePath": "amenity/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.BookingController",
     "Method": "Post",
     "RelativePath": "booking",
@@ -184,6 +253,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.CustomerInteractionController",
+    "Method": "GetAll",
+    "RelativePath": "customer-interaction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.CustomerInteractionController",
+    "Method": "Post",
+    "RelativePath": "customer-interaction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.CustomerInteractionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.CustomerInteractionController",
+    "Method": "Get",
+    "RelativePath": "customer-interaction/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.CustomerInteractionController",
+    "Method": "Put",
+    "RelativePath": "customer-interaction/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.CustomerInteractionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.CustomerInteractionController",
+    "Method": "Delete",
+    "RelativePath": "customer-interaction/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.EmployeeController",
     "Method": "GetAll",
     "RelativePath": "employee",
@@ -191,6 +339,233 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.EmployeeController",
+    "Method": "Post",
+    "RelativePath": "employee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.EmployeeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.EmployeeController",
+    "Method": "Get",
+    "RelativePath": "employee/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.EmployeeController",
+    "Method": "Put",
+    "RelativePath": "employee/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.EmployeeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.EmployeeController",
+    "Method": "Delete",
+    "RelativePath": "employee/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceController",
+    "Method": "GetAll",
+    "RelativePath": "invoice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceController",
+    "Method": "Post",
+    "RelativePath": "invoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.InvoiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceItemController",
+    "Method": "GetAll",
+    "RelativePath": "invoice-item",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceItemController",
+    "Method": "Post",
+    "RelativePath": "invoice-item",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.InvoiceItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceItemController",
+    "Method": "Get",
+    "RelativePath": "invoice-item/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceItemController",
+    "Method": "Put",
+    "RelativePath": "invoice-item/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.InvoiceItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceItemController",
+    "Method": "Delete",
+    "RelativePath": "invoice-item/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceController",
+    "Method": "Get",
+    "RelativePath": "invoice/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceController",
+    "Method": "Put",
+    "RelativePath": "invoice/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.InvoiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.InvoiceController",
+    "Method": "Delete",
+    "RelativePath": "invoice/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -280,6 +655,228 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.LocationController",
+    "Method": "Post",
+    "RelativePath": "location",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.LocationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.LocationController",
+    "Method": "Get",
+    "RelativePath": "location/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.LocationController",
+    "Method": "Put",
+    "RelativePath": "location/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.LocationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.LocationController",
+    "Method": "Delete",
+    "RelativePath": "location/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.PqrCaseController",
+    "Method": "GetAll",
+    "RelativePath": "pqr-case",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.PqrCaseController",
+    "Method": "Post",
+    "RelativePath": "pqr-case",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.PqrCaseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.PqrCaseController",
+    "Method": "Get",
+    "RelativePath": "pqr-case/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.PqrCaseController",
+    "Method": "Put",
+    "RelativePath": "pqr-case/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.PqrCaseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.PqrCaseController",
+    "Method": "Delete",
+    "RelativePath": "pqr-case/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.RoomAmenityController",
+    "Method": "Add",
+    "RelativePath": "room-amenity",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "amenityId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.RoomAmenityController",
+    "Method": "Remove",
+    "RelativePath": "room-amenity",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "amenityId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.RoomAmenityController",
+    "Method": "GetByAmenity",
+    "RelativePath": "room-amenity/amenity/{amenityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "amenityId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.RoomAmenityController",
+    "Method": "GetByRoom",
+    "RelativePath": "room-amenity/room/{roomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -388,6 +985,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.StatusBookingController",
+    "Method": "Post",
+    "RelativePath": "status-booking",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.StatusBookingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.StatusBookingController",
+    "Method": "Get",
+    "RelativePath": "status-booking/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.StatusBookingController",
+    "Method": "Put",
+    "RelativePath": "status-booking/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.StatusBookingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.StatusBookingController",
+    "Method": "Delete",
+    "RelativePath": "status-booking/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.TypeRoomController",
     "Method": "GetAll",
     "RelativePath": "type-room",
@@ -395,6 +1061,85 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.UserController",
+    "Method": "GetAll",
+    "RelativePath": "user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.UserController",
+    "Method": "Post",
+    "RelativePath": "user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.UserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.UserController",
+    "Method": "Get",
+    "RelativePath": "user/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.UserController",
+    "Method": "Put",
+    "RelativePath": "user/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReservaHotel.Application.Common.Dtos.UserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.UserController",
+    "Method": "Delete",
+    "RelativePath": "user/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

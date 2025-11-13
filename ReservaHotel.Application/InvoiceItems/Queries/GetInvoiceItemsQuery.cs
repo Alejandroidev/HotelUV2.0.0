@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.InvoiceItems.Queries{ public record GetInvoiceItemsQuery(): IRequest<CustomWebResponse>; }

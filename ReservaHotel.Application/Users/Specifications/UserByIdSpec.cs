@@ -1,0 +1,1 @@
+using Ardalis.Specification;using ReservaHotel.Domain.Entities;using System;namespace ReservaHotel.Application.Users.Specifications{ public sealed class UserByIdSpec: Specification<User>{ public UserByIdSpec(Guid id){ Query.Where(x=> x.Id==id).Include(x=> x.Employee); } } }
