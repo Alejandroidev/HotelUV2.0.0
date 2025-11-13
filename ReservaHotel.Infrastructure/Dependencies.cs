@@ -12,7 +12,8 @@ public static class Dependencies
 
     public static void ConfigureServices(IConfiguration configuration, IServiceCollection services)
     {
-        var cs = _connectionString ?? configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("No connection string configured");
+        var cs = _connectionString ?? configuration.GetConnectionString("DefaultConnection") 
+            ?? throw new InvalidOperationException("No connection string configured");
         services.AddDbContext<HotelDbContext>(c => c.UseNpgsql(cs));
     }
 }

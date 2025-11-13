@@ -16,7 +16,8 @@ namespace ReservaHotel.Presentacion
             Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
             builder.Services.AddDbContext<HotelDbContext>(options =>
-                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") 
+                ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 
             builder.Services.AddCoreServices(builder.Configuration);
             builder.Services.AddWebServices();
@@ -54,7 +55,14 @@ namespace ReservaHotel.Presentacion
                 await db.Database.EnsureCreatedAsync();
 
                 // 2) Si existen migraciones, intentar aplicarlas
-                try { await db.Database.MigrateAsync(); } catch { /* ignore if no migrations */ }
+                try 
+                { 
+                    await db.Database.MigrateAsync(); 
+                } 
+                catch 
+                { 
+                    /* ignore if no migrations */ 
+                }
 
                 await HotelDbContextSeed.SeedAsync(db);
             }

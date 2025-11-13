@@ -10,9 +10,6 @@ namespace ReservaHotel.Infrastructure.Data
     {
         public static async Task SeedAsync(HotelDbContext context)
         {
-            // La creación de la base de datos debe manejarse con migraciones.
-            // await context.Database.EnsureCreatedAsync();
-
             await SeedLocationsAsync(context);
             await SeedAmenitiesAsync(context);
             await SeedStatusAndTypesAsync(context);
@@ -158,24 +155,21 @@ namespace ReservaHotel.Infrastructure.Data
                     StatusBookingId = statusConfirmed.Id
                 };
 
-                // Reemplaza la línea con el error CS0117 y ortografía incorrecta:
                 var itinerary = new Itinerary
                 {
                     Booking = booking,
                     CheckInDate = booking.CheckInDate,
                     CheckOutDate = booking.CheckOutDate
-                    // No existe la propiedad Details en Itinerary, así que se elimina.
-                    // Si necesitas guardar detalles, deberías agregar una propiedad en la entidad Itinerary.
                 };
 
                 var invoice = new Invoice
                 {
                     Booking = booking,
-                    Cufe = Guid.NewGuid().ToString(), // Placeholder CUFE
+                    Cufe = Guid.NewGuid().ToString(), 
                     IssueDate = DateTime.UtcNow,
                     DueDate = DateTime.UtcNow.AddDays(30),
                     Subtotal = booking.TotalPrice,
-                    TaxAmount = booking.TotalPrice * 0.19m, // Example 19% IVA
+                    TaxAmount = booking.TotalPrice * 0.19m, 
                     TotalAmount = booking.TotalPrice * 1.19m,
                     Status = InvoiceStatus.Issued
                 };

@@ -10,9 +10,6 @@ namespace ReservaHotel.Infrastructure.Data
         {
         }
 
-
-        // TODO: Add DbSet for each entity
-
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Room> Rooms { get; set; }
