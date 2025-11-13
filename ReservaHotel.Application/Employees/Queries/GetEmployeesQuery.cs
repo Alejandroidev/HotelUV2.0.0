@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.Employees.Queries{ public record GetEmployeesQuery(): IRequest<CustomWebResponse>; }

@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.StatusBookings.Queries{ public record GetStatusBookingsQuery(): IRequest<CustomWebResponse>; }

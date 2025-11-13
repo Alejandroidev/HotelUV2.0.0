@@ -23,6 +23,9 @@ namespace ReservaHotel.Application.Config
             CreateMap<StatusBooking, StatusBookingDto>().ReverseMap();
             CreateMap<SystemUser, SystemUserDto>().ReverseMap();
             CreateMap<TypeRoom, TypeRoomDto>().ReverseMap();
+            CreateMap<Amenity, AmenityDto>().ReverseMap();
+            CreateMap<Location, LocationDto>().ReverseMap();
+            CreateMap<Employee, EmployeeDto>().ReverseMap();
             #endregion
         }
     }

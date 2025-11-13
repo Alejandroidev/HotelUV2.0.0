@@ -16,6 +16,16 @@
     ]
   },
   {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.AmenityController",
+    "Method": "GetAll",
+    "RelativePath": "amenity",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.BookingController",
     "Method": "Post",
     "RelativePath": "booking",
@@ -174,6 +184,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.EmployeeController",
+    "Method": "GetAll",
+    "RelativePath": "employee",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.ItineraryController",
     "Method": "Post",
     "RelativePath": "itinerary",
@@ -246,6 +266,16 @@
     "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.ItineraryController",
     "Method": "GetAll",
     "RelativePath": "itinerary/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.LocationController",
+    "Method": "GetAll",
+    "RelativePath": "location",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -345,6 +375,26 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.StatusBookingController",
+    "Method": "GetAll",
+    "RelativePath": "status-booking",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReservaHotel.Presentacion.Controllers.Rest.TypeRoomController",
+    "Method": "GetAll",
+    "RelativePath": "type-room",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

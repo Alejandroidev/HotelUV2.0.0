@@ -1,0 +1,1 @@
+using MediatR;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.TypeRooms.Queries{ public record GetTypeRoomsQuery(): IRequest<CustomWebResponse>; }
