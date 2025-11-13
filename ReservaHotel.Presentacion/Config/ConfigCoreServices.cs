@@ -1,12 +1,13 @@
 using Common.Helper;
 using Common.Interfaces;
-
-using ReservaHotel.Application.Interfaces.General;
-using ReservaHotel.Infrastructure;
-using ReservaHotel.Presentacion.Controllers.Tools;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ReservaHotel.Application.Config;
+using ReservaHotel.Application.Itineraries.Handlers;
+using ReservaHotel.Application.Interfaces.General;
+using ReservaHotel.Infrastructure;
+using ReservaHotel.Presentacion.Controllers.Tools;
 
 
 namespace It270.MedicalManagement.Billing.Presentation.WebApi.Config;
@@ -33,6 +34,9 @@ public static class ConfigCoreServices
         services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
         services.AddSingleton<IWebTools, WebTools>();
+
+        // MediatR: registrar handlers desde la capa Application
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<CreateItineraryHandler>());
 
         return services;
     }

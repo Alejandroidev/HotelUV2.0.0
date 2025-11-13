@@ -6,6 +6,7 @@ using ReservaHotel.Application.Interfaces.General;
 using ReservaHotel.Application.Itineraries.Commands;
 using Ardalis.Specification;
 using System.Net;
+using System;
 
 namespace ReservaHotel.Application.Itineraries.Handlers
 {
@@ -43,7 +44,7 @@ namespace ReservaHotel.Application.Itineraries.Handlers
 
         private sealed class ItineraryByIdSpec : Specification<Itinerary>
         {
-            public ItineraryByIdSpec(int id)
+            public ItineraryByIdSpec(Guid id)
             {
                 Query.Where(i => i.Id == id);
             }

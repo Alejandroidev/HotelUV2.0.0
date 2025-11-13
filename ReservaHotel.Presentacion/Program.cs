@@ -1,8 +1,9 @@
-using It270.MedicalManagement.Billing.Presentation.WebApi.Config;
 using Microsoft.EntityFrameworkCore;
 using ReservaHotel.Infrastructure;
 using ReservaHotel.Infrastructure.Data;
 using ReservaHotel.Presentacion.Config;
+using Microsoft.OpenApi.Models;
+using It270.MedicalManagement.Billing.Presentation.WebApi.Config;
 
 namespace ReservaHotel.Presentacion
 {
@@ -21,7 +22,15 @@ namespace ReservaHotel.Presentacion
             builder.Services.AddWebServices();
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddRazorPages();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "ReservaHotel API",
+                    Version = "v1",
+                    Description = "API REST de gestión de reservas de hotel"
+                });
+            });
 
             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             builder.Services.AddCors(options =>
@@ -37,19 +46,37 @@ namespace ReservaHotel.Presentacion
 
             var app = builder.Build();
 
-            if (!app.Environment.IsDevelopment())
+            using (var scope = app.Services.CreateScope())
             {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-                app.UseDeveloperExceptionPage();
+                var db = scope.ServiceProvider.GetRequiredService<HotelDbContext>();
+
+                // 1) Crear esquema si la BD está vacía
+                await db.Database.EnsureCreatedAsync();
+
+                // 2) Si existen migraciones, intentar aplicarlas
+                try { await db.Database.MigrateAsync(); } catch { /* ignore if no migrations */ }
+
+                await HotelDbContextSeed.SeedAsync(db);
             }
 
-            app.MapControllers();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ReservaHotel API v1");
+                c.DisplayRequestDuration();
+            });
+
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseHsts();
+            }
+
             app.UseRouting();
             app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
-            app.UseStaticFiles();
-            app.MapRazorPages();
+            app.MapControllers();
+            app.MapGet("/", () => Results.Redirect("/swagger"));
+
             app.Run();
         }
     }

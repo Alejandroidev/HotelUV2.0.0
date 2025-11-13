@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ReservaHotel.Application.Common.Dtos;
 using ReservaHotel.Application.Itineraries.Commands;
 using ReservaHotel.Application.Itineraries.Queries;
+using System;
 
 namespace ReservaHotel.Presentacion.Controllers.Rest
 {
@@ -26,7 +27,7 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         /// <param name="ct">Cancellation token</param>
         /// <returns>Selected entity data</returns>
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id, CancellationToken ct)
+        public async Task<IActionResult> Get(Guid id, CancellationToken ct)
         {
             var response = await _mediator.Send(new GetItineraryByIdQuery(id), ct);
             return _webTools.CustomResponse(response);
@@ -64,7 +65,7 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         /// <param name="ct">Cancellation token</param>
         /// <returns>Selected entity data</returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] ItineraryDto dto, CancellationToken ct)
+        public async Task<IActionResult> Put(Guid id, [FromBody] ItineraryDto dto, CancellationToken ct)
         {
             dto.Id = id;
             var response = await _mediator.Send(new UpdateItineraryCommand(id, dto), ct);
@@ -78,7 +79,7 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         /// <param name="ct">Cancellation token</param>
         /// <returns>Result of the delete operation</returns>
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id, CancellationToken ct)
+        public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
         {
             var response = await _mediator.Send(new DeleteItineraryCommand(id), ct);
             return _webTools.CustomResponse(response);
