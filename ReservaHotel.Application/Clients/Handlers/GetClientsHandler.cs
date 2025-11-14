@@ -7,6 +7,13 @@ using ReservaHotel.Domain.Entities.Base;
 
 namespace ReservaHotel.Application.Clients.Handlers
 {
+    /// <summary>
+    /// Handles requests to list all clients.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetClientsQuery(), ct);
+    /// </remarks>
     public class GetClientsHandler : IRequestHandler<GetClientsQuery, CustomWebResponse>
     {
         private readonly IReadRepository<Client> _repo;
@@ -18,6 +25,7 @@ namespace ReservaHotel.Application.Clients.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetClientsQuery request, CancellationToken ct)
         {
             var list = await _repo.ListAsync(ct);

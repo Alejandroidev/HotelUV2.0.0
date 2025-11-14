@@ -1,1 +1,61 @@
-using AutoMapper;using MediatR;using ReservaHotel.Application.Users.Commands;using ReservaHotel.Application.Users.Specifications;using ReservaHotel.Application.Interfaces.General;using ReservaHotel.Domain.Entities;using ReservaHotel.Domain.Entities.Base;using System.Net;namespace ReservaHotel.Application.Users.Handlers{ public class UpdateUserHandler: IRequestHandler<UpdateUserCommand, CustomWebResponse>{ private readonly IRepository<User> _repo; private readonly IMapper _mapper; public UpdateUserHandler(IRepository<User> repo, IMapper mapper){ _repo=repo; _mapper=mapper;} public async Task<CustomWebResponse> Handle(UpdateUserCommand request, CancellationToken ct){ var spec=new UserByIdSpec(request.Id); var entity= await _repo.FirstOrDefaultAsync(spec, ct); if(entity==null) return new CustomWebResponse(true){ StatusCode=HttpStatusCode.NotFound, Message="User not found"}; _mapper.Map(request.User, entity); await _repo.UpdateAsync(entity, ct); return new CustomWebResponse{ ResponseBody=_mapper.Map<Application.Common.Dtos.UserDto>(entity)}; } } }
+using AutoMapper;
+using MediatR;
+using ReservaHotel.Application.Users.Commands;
+using ReservaHotel.Application.Users.Specifications;
+using ReservaHotel.Application.Interfaces.General;
+using ReservaHotel.Domain.Entities;
+using ReservaHotel.Domain.Entities.Base;
+using System.Net;
+
+namespace ReservaHotel.Application.Users.Handlers
+{
+    /// <summary>
+    /// Handles user update requests.
+    /// Example:
+    /// try { var res = await _mediator.Send(new UpdateUserCommand(id, dto), ct); } catch { /* log */ }
+    /// </summary>
+    public class UpdateUserHandler : IRequestHandler<UpdateUserCommand, CustomWebResponse>
+    {
+        private readonly IRepository<User> _repo;
+        private readonly IMapper _mapper;
+
+        public UpdateUserHandler(IRepository<User> repo, IMapper mapper)
+        {
+            _repo = repo;
+            _mapper = mapper;
+        }
+
+        /// <inheritdoc />
+        public async Task<CustomWebResponse> Handle(UpdateUserCommand request, CancellationToken ct)
+        {
+            try
+            {
+                var spec = new UserByIdSpec(request.Id);
+                var entity = await _repo.FirstOrDefaultAsync(spec, ct);
+                if (entity == null)
+                {
+                    return new CustomWebResponse(true)
+                    {
+                        StatusCode = HttpStatusCode.NotFound,
+                        Message = "User not found"
+                    };
+                }
+
+                _mapper.Map(request.User, entity);
+                await _repo.UpdateAsync(entity, ct);
+                return new CustomWebResponse
+                {
+                    ResponseBody = _mapper.Map<Application.Common.Dtos.UserDto>(entity)
+                };
+            }
+            catch
+            {
+                return new CustomWebResponse(true)
+                {
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = "An unexpected error occurred while updating the user."
+                };
+            }
+        }
+    }
+}

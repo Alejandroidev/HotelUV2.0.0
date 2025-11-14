@@ -16,3 +16,6 @@ C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Application\obj\Debug\net9.
 C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Application\obj\Debug\net9.0\refint\ReservaHotel.Application.dll
 C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Application\obj\Debug\net9.0\ReservaHotel.Application.pdb
 C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Application\obj\Debug\net9.0\ref\ReservaHotel.Application.dll
+C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.0\ReservaHotel.Application.xml
+C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Application\bin\Debug\net9.0\ReservaHotel.Domain.xml
+C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Application\obj\Debug\net9.0\ReservaHotel.Application.xml

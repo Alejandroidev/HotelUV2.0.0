@@ -20,3 +20,7 @@ C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Infrastructure\obj\Debug\ne
 C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Infrastructure\obj\Debug\net9.0\ReservaHotel.Infrastructure.pdb
 C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Infrastructure\obj\Debug\net9.0\ReservaHotel.Infrastructure.genruntimeconfig.cache
 C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Infrastructure\obj\Debug\net9.0\ref\ReservaHotel.Infrastructure.dll
+C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Infrastructure\bin\Debug\net9.0\ReservaHotel.Infrastructure.xml
+C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Infrastructure\bin\Debug\net9.0\ReservaHotel.Application.xml
+C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Infrastructure\bin\Debug\net9.0\ReservaHotel.Domain.xml
+C:\Users\USER\Source\Repos\HotelUV2.0.0\ReservaHotel.Infrastructure\obj\Debug\net9.0\ReservaHotel.Infrastructure.xml

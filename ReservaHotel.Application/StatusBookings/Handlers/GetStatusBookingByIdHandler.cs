@@ -9,6 +9,13 @@ using System.Net;
 
 namespace ReservaHotel.Application.StatusBookings.Handlers
 {
+    /// <summary>
+    /// Handles requests to retrieve a booking status by identifier.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetStatusBookingByIdQuery(id), ct);
+    /// </remarks>
     public class GetStatusBookingByIdHandler : IRequestHandler<GetStatusBookingByIdQuery, CustomWebResponse>
     {
         private readonly IReadRepository<StatusBooking> _repo;
@@ -20,6 +27,7 @@ namespace ReservaHotel.Application.StatusBookings.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetStatusBookingByIdQuery request, CancellationToken ct)
         {
             var spec = new StatusBookingByIdSpec(request.Id);

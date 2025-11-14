@@ -6,8 +6,21 @@ using System.Text;
 
 namespace ReservaHotel.Infrastructure.Data
 {
+    /// <summary>
+    /// Provides utilities to seed initial data into the database for local development and tests.
+    /// The methods are idempotent: each section verifies if data exists before inserting.
+    /// </summary>
     public static class HotelDbContextSeed
     {
+        /// <summary>
+        /// Seeds all reference and sample data required for the application to run.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
+        /// <remarks>
+        /// Order matters because some seeds depend on previously inserted entities.
+        /// Example:
+        /// await HotelDbContextSeed.SeedAsync(dbContext);
+        /// </remarks>
         public static async Task SeedAsync(HotelDbContext context)
         {
             await SeedLocationsAsync(context);
@@ -20,6 +33,10 @@ namespace ReservaHotel.Infrastructure.Data
             await SeedCrmAndPqrAsync(context);
         }
 
+        /// <summary>
+        /// Seeds example hotel locations if none exist.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
         private static async Task SeedLocationsAsync(HotelDbContext context)
         {
             if (!await context.Locations.AnyAsync())
@@ -32,6 +49,10 @@ namespace ReservaHotel.Infrastructure.Data
             }
         }
 
+        /// <summary>
+        /// Seeds amenities that can be assigned to rooms.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
         private static async Task SeedAmenitiesAsync(HotelDbContext context)
         {
             if (!await context.Amenities.AnyAsync())
@@ -46,6 +67,10 @@ namespace ReservaHotel.Infrastructure.Data
             }
         }
 
+        /// <summary>
+        /// Seeds booking statuses and room types.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
         private static async Task SeedStatusAndTypesAsync(HotelDbContext context)
         {
             if (!await context.StatusBookings.AnyAsync())
@@ -68,6 +93,10 @@ namespace ReservaHotel.Infrastructure.Data
             await context.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Seeds example rooms and establishes room-amenity relationships.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
         private static async Task SeedRoomsAndAmenitiesAsync(HotelDbContext context)
         {
             if (!await context.Rooms.AnyAsync())
@@ -103,6 +132,10 @@ namespace ReservaHotel.Infrastructure.Data
             }
         }
 
+        /// <summary>
+        /// Seeds sample clients.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
         private static async Task SeedClientsAsync(HotelDbContext context)
         {
             if (!await context.Clients.AnyAsync())
@@ -115,6 +148,10 @@ namespace ReservaHotel.Infrastructure.Data
             }
         }
 
+        /// <summary>
+        /// Seeds employees and a system user associated to an employee.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
         private static async Task SeedEmployeesAndUsersAsync(HotelDbContext context)
         {
             if (!await context.Employees.AnyAsync())
@@ -136,6 +173,10 @@ namespace ReservaHotel.Infrastructure.Data
             }
         }
 
+        /// <summary>
+        /// Seeds a sample booking with related itinerary and invoice.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
         private static async Task SeedBookingsAndRelatedAsync(HotelDbContext context)
         {
             if (!await context.Bookings.AnyAsync())
@@ -165,11 +206,11 @@ namespace ReservaHotel.Infrastructure.Data
                 var invoice = new Invoice
                 {
                     Booking = booking,
-                    Cufe = Guid.NewGuid().ToString(), 
+                    Cufe = Guid.NewGuid().ToString(),
                     IssueDate = DateTime.UtcNow,
                     DueDate = DateTime.UtcNow.AddDays(30),
                     Subtotal = booking.TotalPrice,
-                    TaxAmount = booking.TotalPrice * 0.19m, 
+                    TaxAmount = booking.TotalPrice * 0.19m,
                     TotalAmount = booking.TotalPrice * 1.19m,
                     Status = InvoiceStatus.Issued
                 };
@@ -185,6 +226,10 @@ namespace ReservaHotel.Infrastructure.Data
             }
         }
 
+        /// <summary>
+        /// Seeds CRM interactions and example PQR cases.
+        /// </summary>
+        /// <param name="context">The EF Core database context.</param>
         private static async Task SeedCrmAndPqrAsync(HotelDbContext context)
         {
             if (!await context.CustomerInteractions.AnyAsync())
@@ -210,8 +255,11 @@ namespace ReservaHotel.Infrastructure.Data
         }
 
         /// <summary>
-        /// Creates a password hash and salt from a given password.
+        /// Creates a password hash and salt from a given password using HMACSHA512.
         /// </summary>
+        /// <param name="password">The plain-text password.</param>
+        /// <param name="passwordHash">The resulting hash.</param>
+        /// <param name="passwordSalt">The random salt used to compute the hash.</param>
         private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new HMACSHA512())

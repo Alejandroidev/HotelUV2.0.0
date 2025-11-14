@@ -9,6 +9,13 @@ using System.Net;
 
 namespace ReservaHotel.Application.Amenities.Handlers
 {
+    /// <summary>
+    /// Handles requests to retrieve an amenity by its identifier.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetAmenityByIdQuery(id), ct);
+    /// </remarks>
     public class GetAmenityByIdHandler : IRequestHandler<GetAmenityByIdQuery, CustomWebResponse>
     {
         private readonly IReadRepository<Amenity> _repo;
@@ -20,6 +27,7 @@ namespace ReservaHotel.Application.Amenities.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetAmenityByIdQuery request, CancellationToken ct)
         {
             var spec = new AmenityByIdSpec(request.Id);
@@ -28,7 +36,7 @@ namespace ReservaHotel.Application.Amenities.Handlers
             {
                 return new CustomWebResponse(true)
                 {
-                    StatusCode = HttpStatusCode.NotFound,
+                    StatusCode = System.Net.HttpStatusCode.NotFound,
                     Message = "Amenity not found"
                 };
             }

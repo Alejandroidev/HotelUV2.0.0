@@ -9,6 +9,11 @@ using System.Net;
 
 namespace ReservaHotel.Application.InvoiceItems.Handlers
 {
+    /// <summary>
+    /// Handles invoice item update requests.
+    /// Example:
+    /// try { var res = await _mediator.Send(new UpdateInvoiceItemCommand(id, dto), ct); } catch { /* log */ }
+    /// </summary>
     public class UpdateInvoiceItemHandler : IRequestHandler<UpdateInvoiceItemCommand, CustomWebResponse>
     {
         private readonly IRepository<InvoiceItem> _repo;
@@ -20,25 +25,37 @@ namespace ReservaHotel.Application.InvoiceItems.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(UpdateInvoiceItemCommand request, CancellationToken ct)
         {
-            var spec = new InvoiceItemByIdSpec(request.Id);
-            var entity = await _repo.FirstOrDefaultAsync(spec, ct);
-            if (entity == null)
+            try
+            {
+                var spec = new InvoiceItemByIdSpec(request.Id);
+                var entity = await _repo.FirstOrDefaultAsync(spec, ct);
+                if (entity == null)
+                {
+                    return new CustomWebResponse(true)
+                    {
+                        StatusCode = HttpStatusCode.NotFound,
+                        Message = "InvoiceItem not found"
+                    };
+                }
+
+                _mapper.Map(request.InvoiceItem, entity);
+                await _repo.UpdateAsync(entity, ct);
+                return new CustomWebResponse
+                {
+                    ResponseBody = _mapper.Map<Application.Common.Dtos.InvoiceItemDto>(entity)
+                };
+            }
+            catch
             {
                 return new CustomWebResponse(true)
                 {
-                    StatusCode = HttpStatusCode.NotFound,
-                    Message = "InvoiceItem not found"
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = "An unexpected error occurred while updating the invoice item."
                 };
             }
-
-            _mapper.Map(request.InvoiceItem, entity);
-            await _repo.UpdateAsync(entity, ct);
-            return new CustomWebResponse
-            {
-                ResponseBody = _mapper.Map<Application.Common.Dtos.InvoiceItemDto>(entity)
-            };
         }
     }
 }

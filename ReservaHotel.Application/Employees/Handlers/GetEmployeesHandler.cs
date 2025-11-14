@@ -1,1 +1,39 @@
-using AutoMapper;using MediatR;using ReservaHotel.Application.Employees.Queries;using ReservaHotel.Application.Interfaces.General;using ReservaHotel.Domain.Entities;using ReservaHotel.Domain.Entities.Base;namespace ReservaHotel.Application.Employees.Handlers{ public class GetEmployeesHandler: IRequestHandler<GetEmployeesQuery, CustomWebResponse>{ private readonly IReadRepository<Employee> _repo; private readonly IMapper _mapper; public GetEmployeesHandler(IReadRepository<Employee> repo, IMapper mapper){ _repo=repo; _mapper=mapper;} public async Task<CustomWebResponse> Handle(GetEmployeesQuery request, CancellationToken ct){ var list= await _repo.ListAsync(ct); var dto=_mapper.Map<List<Application.Common.Dtos.EmployeeDto>>(list); return new CustomWebResponse{ ResponseBody=dto}; } } }
+using AutoMapper;
+using MediatR;
+using ReservaHotel.Application.Employees.Queries;
+using ReservaHotel.Application.Interfaces.General;
+using ReservaHotel.Domain.Entities;
+using ReservaHotel.Domain.Entities.Base;
+
+namespace ReservaHotel.Application.Employees.Handlers
+{
+    /// <summary>
+    /// Handles requests to list all employees.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetEmployeesQuery(), ct);
+    /// </remarks>
+    public class GetEmployeesHandler : IRequestHandler<GetEmployeesQuery, CustomWebResponse>
+    {
+        private readonly IReadRepository<Employee> _repo;
+        private readonly IMapper _mapper;
+
+        public GetEmployeesHandler(IReadRepository<Employee> repo, IMapper mapper)
+        {
+            _repo = repo;
+            _mapper = mapper;
+        }
+
+        /// <inheritdoc />
+        public async Task<CustomWebResponse> Handle(GetEmployeesQuery request, CancellationToken ct)
+        {
+            var list = await _repo.ListAsync(ct);
+            var dto = _mapper.Map<List<Application.Common.Dtos.EmployeeDto>>(list);
+            return new CustomWebResponse
+            {
+                ResponseBody = dto
+            };
+        }
+    }
+}

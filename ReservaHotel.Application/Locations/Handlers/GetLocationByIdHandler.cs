@@ -9,6 +9,13 @@ using System.Net;
 
 namespace ReservaHotel.Application.Locations.Handlers
 {
+    /// <summary>
+    /// Handles requests to retrieve a location by identifier.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetLocationByIdQuery(id), ct);
+    /// </remarks>
     public class GetLocationByIdHandler : IRequestHandler<GetLocationByIdQuery, CustomWebResponse>
     {
         private readonly IReadRepository<Location> _repo;
@@ -20,6 +27,7 @@ namespace ReservaHotel.Application.Locations.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetLocationByIdQuery request, CancellationToken ct)
         {
             var spec = new LocationByIdSpec(request.Id);

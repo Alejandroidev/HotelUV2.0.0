@@ -9,6 +9,13 @@ using System.Net;
 
 namespace ReservaHotel.Application.Rooms.Handlers
 {
+    /// <summary>
+    /// Handles requests to retrieve a room by its identifier.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetRoomByIdQuery(id), ct);
+    /// </remarks>
     public class GetRoomByIdHandler : IRequestHandler<GetRoomByIdQuery, CustomWebResponse>
     {
         private readonly IReadRepository<Room> _repo;
@@ -20,6 +27,7 @@ namespace ReservaHotel.Application.Rooms.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetRoomByIdQuery request, CancellationToken ct)
         {
             var spec = new RoomByIdSpec(request.Id);

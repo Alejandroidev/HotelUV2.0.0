@@ -9,6 +9,11 @@ using System.Net;
 
 namespace ReservaHotel.Application.Employees.Handlers
 {
+    /// <summary>
+    /// Handles employee update requests.
+    /// Example:
+    /// try { var res = await _mediator.Send(new UpdateEmployeeCommand(id, dto), ct); } catch { /* log */ }
+    /// </summary>
     public class UpdateEmployeeHandler : IRequestHandler<UpdateEmployeeCommand, CustomWebResponse>
     {
         private readonly IRepository<Employee> _repo;
@@ -20,25 +25,37 @@ namespace ReservaHotel.Application.Employees.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(UpdateEmployeeCommand request, CancellationToken ct)
         {
-            var spec = new EmployeeByIdSpec(request.Id);
-            var entity = await _repo.FirstOrDefaultAsync(spec, ct);
-            if (entity == null)
+            try
+            {
+                var spec = new EmployeeByIdSpec(request.Id);
+                var entity = await _repo.FirstOrDefaultAsync(spec, ct);
+                if (entity == null)
+                {
+                    return new CustomWebResponse(true)
+                    {
+                        StatusCode = HttpStatusCode.NotFound,
+                        Message = "Employee not found"
+                    };
+                }
+
+                _mapper.Map(request.Employee, entity);
+                await _repo.UpdateAsync(entity, ct);
+                return new CustomWebResponse
+                {
+                    ResponseBody = _mapper.Map<Application.Common.Dtos.EmployeeDto>(entity)
+                };
+            }
+            catch
             {
                 return new CustomWebResponse(true)
                 {
-                    StatusCode = HttpStatusCode.NotFound,
-                    Message = "Employee not found"
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = "An unexpected error occurred while updating the employee."
                 };
             }
-
-            _mapper.Map(request.Employee, entity);
-            await _repo.UpdateAsync(entity, ct);
-            return new CustomWebResponse
-            {
-                ResponseBody = _mapper.Map<Application.Common.Dtos.EmployeeDto>(entity)
-            };
         }
     }
 }

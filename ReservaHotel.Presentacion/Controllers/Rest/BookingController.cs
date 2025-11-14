@@ -8,6 +8,14 @@ using System;
 
 namespace ReservaHotel.Presentacion.Controllers.Rest
 {
+    /// <summary>
+    /// Manages Booking resources (create, read, update, delete).
+    /// </summary>
+    /// <remarks>
+    /// Example create:
+    /// POST /booking
+    /// { "checkInDate":"2025-02-01", "checkOutDate":"2025-02-05", "numberOfGuests":2, "totalPrice":600000, "clientId":"{guid}", "roomId":"{guid}", "statusBookingId":"{guid}" }
+    /// </remarks>
     [ApiController]
     [Route("booking")]
     public class BookingController : ControllerBase
@@ -15,6 +23,9 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         private readonly IWebTools _webTools;
         private readonly IMediator _mediator;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="BookingController"/>.
+        /// </summary>
         public BookingController(IWebTools webTools, IMediator mediator)
         {
             _webTools = webTools;
@@ -22,12 +33,14 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         }
 
         /// <summary>
-        /// Get entity by identifier
+        /// Gets a booking by identifier.
         /// </summary>
-        /// <param name="id">Entity identifier</param>
-        /// <param name="ct">Cancellation token</param>
-        /// <returns>Selected entity data</returns>
+        /// <param name="id">Booking identifier.</param>
+        /// <param name="ct">Cancellation token.</param>
+        /// <returns>Booking data or 404.</returns>
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Get(Guid id, CancellationToken ct)
         {
             var response = await _mediator.Send(new GetBookingByIdQuery(id), ct);
@@ -35,11 +48,12 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         }
 
         /// <summary>
-        /// Get All entities
+        /// Lists all bookings.
         /// </summary>
-        /// <param name="ct">Cancellation token</param>
-        /// <returns>Selected entity data</returns>
+        /// <param name="ct">Cancellation token.</param>
+        /// <returns>Collection of bookings.</returns>
         [HttpGet("all")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll(CancellationToken ct)
         {
             var response = await _mediator.Send(new GetBookingsQuery(), ct);
@@ -47,12 +61,18 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         }
 
         /// <summary>
-        /// Add Booking
+        /// Creates a new booking.
         /// </summary>
-        /// <param name="bookingDto">Entity data</param>
-        /// <param name="ct">Cancellation token</param>
-        /// <returns>Selected entity data</returns>
+        /// <param name="dto">Booking payload.</param>
+        /// <param name="ct">Cancellation token.</param>
+        /// <returns>The created booking.</returns>
+        /// <remarks>
+        /// Usage:
+        /// try { var result = await _mediator.Send(new CreateBookingCommand(dto), ct); } catch (Exception ex) { /* log */ }
+        /// </remarks>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post([FromBody] BookingDto dto, CancellationToken ct)
         {
             var response = await _mediator.Send(new CreateBookingCommand(dto), ct);
@@ -60,13 +80,15 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         }
 
         /// <summary>
-        /// Update entity
+        /// Updates an existing booking.
         /// </summary>
-        /// <param name="id">Entity identifier</param>
-        /// <param name="bookingDto">Entity data</param>
-        /// <param name="ct">Cancellation token</param>
-        /// <returns>Selected entity data</returns>
+        /// <param name="id">Booking identifier.</param>
+        /// <param name="dto">Updated booking payload.</param>
+        /// <param name="ct">Cancellation token.</param>
+        /// <returns>Updated booking or 404.</returns>
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Put(Guid id, [FromBody] BookingDto dto, CancellationToken ct)
         {
             dto.Id = id;
@@ -75,12 +97,14 @@ namespace ReservaHotel.Presentacion.Controllers.Rest
         }
 
         /// <summary>
-        /// Delete entity
+        /// Deletes a booking.
         /// </summary>
-        /// <param name="id">Entity identifier</param>
-        /// <param name="ct">Cancellation token</param>
-        /// <returns>Selected entity data</returns>
+        /// <param name="id">Booking identifier.</param>
+        /// <param name="ct">Cancellation token.</param>
+        /// <returns>Deleted identifier or 404.</returns>
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
         {
             var response = await _mediator.Send(new DeleteBookingCommand(id), ct);

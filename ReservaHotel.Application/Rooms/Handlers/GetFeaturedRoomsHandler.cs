@@ -8,6 +8,13 @@ using ReservaHotel.Domain.Entities.Base;
 
 namespace ReservaHotel.Application.Rooms.Handlers
 {
+    /// <summary>
+    /// Handles requests to list featured/non-featured rooms.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetFeaturedRoomsQuery(true), ct);
+    /// </remarks>
     public class GetFeaturedRoomsHandler : IRequestHandler<GetFeaturedRoomsQuery, CustomWebResponse>
     {
         private readonly IReadRepository<Room> _repo;
@@ -19,6 +26,7 @@ namespace ReservaHotel.Application.Rooms.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetFeaturedRoomsQuery request, CancellationToken ct)
         {
             var spec = new FeaturedRoomsSpec(request.IsFeatured);

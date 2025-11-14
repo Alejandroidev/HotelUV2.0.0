@@ -10,6 +10,13 @@ using System;
 
 namespace ReservaHotel.Application.Itineraries.Handlers
 {
+    /// <summary>
+    /// Handles requests to retrieve an itinerary by identifier.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetItineraryByIdQuery(id), ct);
+    /// </remarks>
     public class GetItineraryByIdHandler : IRequestHandler<GetItineraryByIdQuery, CustomWebResponse>
     {
         private readonly IReadRepository<Itinerary> _repo;
@@ -21,6 +28,7 @@ namespace ReservaHotel.Application.Itineraries.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetItineraryByIdQuery request, CancellationToken cancellationToken)
         {
             var spec = new ItineraryByIdSpec(request.Id);

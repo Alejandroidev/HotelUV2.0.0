@@ -8,6 +8,11 @@ using System.Net;
 
 namespace ReservaHotel.Application.Locations.Handlers
 {
+    /// <summary>
+    /// Handles location deletion requests.
+    /// Example:
+    /// try { var res = await _mediator.Send(new DeleteLocationCommand(id), ct); } catch { /* log */ }
+    /// </summary>
     public class DeleteLocationHandler : IRequestHandler<DeleteLocationCommand, CustomWebResponse>
     {
         private readonly IRepository<Location> _repo;
@@ -17,24 +22,36 @@ namespace ReservaHotel.Application.Locations.Handlers
             _repo = repo;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(DeleteLocationCommand request, CancellationToken ct)
         {
-            var spec = new LocationByIdSpec(request.Id);
-            var entity = await _repo.FirstOrDefaultAsync(spec, ct);
-            if (entity == null)
+            try
+            {
+                var spec = new LocationByIdSpec(request.Id);
+                var entity = await _repo.FirstOrDefaultAsync(spec, ct);
+                if (entity == null)
+                {
+                    return new CustomWebResponse(true)
+                    {
+                        StatusCode = HttpStatusCode.NotFound,
+                        Message = "Location not found"
+                    };
+                }
+
+                await _repo.DeleteAsync(entity, ct);
+                return new CustomWebResponse
+                {
+                    ResponseBody = request.Id
+                };
+            }
+            catch
             {
                 return new CustomWebResponse(true)
                 {
-                    StatusCode = HttpStatusCode.NotFound,
-                    Message = "Location not found"
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = "An unexpected error occurred while deleting the location."
                 };
             }
-
-            await _repo.DeleteAsync(entity, ct);
-            return new CustomWebResponse
-            {
-                ResponseBody = request.Id
-            };
         }
     }
 }

@@ -9,6 +9,13 @@ using System.Net;
 
 namespace ReservaHotel.Application.Employees.Handlers
 {
+    /// <summary>
+    /// Handles requests to retrieve an employee by identifier.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetEmployeeByIdQuery(id), ct);
+    /// </remarks>
     public class GetEmployeeByIdHandler : IRequestHandler<GetEmployeeByIdQuery, CustomWebResponse>
     {
         private readonly IReadRepository<Employee> _repo;
@@ -20,6 +27,7 @@ namespace ReservaHotel.Application.Employees.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetEmployeeByIdQuery request, CancellationToken ct)
         {
             var spec = new EmployeeByIdSpec(request.Id);

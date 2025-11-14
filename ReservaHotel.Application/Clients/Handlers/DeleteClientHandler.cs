@@ -8,6 +8,11 @@ using System.Net;
 
 namespace ReservaHotel.Application.Clients.Handlers
 {
+    /// <summary>
+    /// Handles client deletion requests.
+    /// Example:
+    /// try { var res = await _mediator.Send(new DeleteClientCommand(id), ct); } catch { /* log */ }
+    /// </summary>
     public class DeleteClientHandler : IRequestHandler<DeleteClientCommand, CustomWebResponse>
     {
         private readonly IRepository<Client> _repo;
@@ -17,24 +22,36 @@ namespace ReservaHotel.Application.Clients.Handlers
             _repo = repo;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(DeleteClientCommand request, CancellationToken ct)
         {
-            var spec = new ClientSpec(request.Id);
-            var entity = await _repo.FirstOrDefaultAsync(spec, ct);
-            if (entity == null)
+            try
+            {
+                var spec = new ClientSpec(request.Id);
+                var entity = await _repo.FirstOrDefaultAsync(spec, ct);
+                if (entity == null)
+                {
+                    return new CustomWebResponse(true)
+                    {
+                        StatusCode = HttpStatusCode.NotFound,
+                        Message = "Client not found"
+                    };
+                }
+
+                await _repo.DeleteAsync(entity, ct);
+                return new CustomWebResponse
+                {
+                    ResponseBody = request.Id
+                };
+            }
+            catch
             {
                 return new CustomWebResponse(true)
                 {
-                    StatusCode = HttpStatusCode.NotFound,
-                    Message = "Client not found"
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = "An unexpected error occurred while deleting the client."
                 };
             }
-
-            await _repo.DeleteAsync(entity, ct);
-            return new CustomWebResponse
-            {
-                ResponseBody = request.Id
-            };
         }
     }
 }

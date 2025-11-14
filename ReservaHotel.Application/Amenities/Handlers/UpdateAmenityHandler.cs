@@ -9,6 +9,11 @@ using System.Net;
 
 namespace ReservaHotel.Application.Amenities.Handlers
 {
+    /// <summary>
+    /// Handles amenity update requests.
+    /// Example:
+    /// try { var res = await _mediator.Send(new UpdateAmenityCommand(id, dto), ct); } catch { /* log */ }
+    /// </summary>
     public class UpdateAmenityHandler : IRequestHandler<UpdateAmenityCommand, CustomWebResponse>
     {
         private readonly IRepository<Amenity> _repo;
@@ -20,25 +25,37 @@ namespace ReservaHotel.Application.Amenities.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(UpdateAmenityCommand request, CancellationToken ct)
         {
-            var spec = new AmenityByIdSpec(request.Id);
-            var entity = await _repo.FirstOrDefaultAsync(spec, ct);
-            if (entity == null)
+            try
+            {
+                var spec = new AmenityByIdSpec(request.Id);
+                var entity = await _repo.FirstOrDefaultAsync(spec, ct);
+                if (entity == null)
+                {
+                    return new CustomWebResponse(true)
+                    {
+                        StatusCode = HttpStatusCode.NotFound,
+                        Message = "Amenity not found"
+                    };
+                }
+
+                _mapper.Map(request.Amenity, entity);
+                await _repo.UpdateAsync(entity, ct);
+                return new CustomWebResponse
+                {
+                    ResponseBody = _mapper.Map<Application.Common.Dtos.AmenityDto>(entity)
+                };
+            }
+            catch
             {
                 return new CustomWebResponse(true)
                 {
-                    StatusCode = HttpStatusCode.NotFound,
-                    Message = "Amenity not found"
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = "An unexpected error occurred while updating the amenity."
                 };
             }
-
-            _mapper.Map(request.Amenity, entity);
-            await _repo.UpdateAsync(entity, ct);
-            return new CustomWebResponse
-            {
-                ResponseBody = _mapper.Map<Application.Common.Dtos.AmenityDto>(entity)
-            };
         }
     }
 }

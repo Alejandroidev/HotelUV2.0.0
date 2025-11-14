@@ -9,6 +9,11 @@ using System.Net;
 
 namespace ReservaHotel.Application.Bookings.Handlers
 {
+    /// <summary>
+    /// Handles booking update requests.
+    /// Example:
+    /// try { var res = await _mediator.Send(new UpdateBookingCommand(id, dto), ct); } catch { /* log */ }
+    /// </summary>
     public class UpdateBookingHandler : IRequestHandler<UpdateBookingCommand, CustomWebResponse>
     {
         private readonly IRepository<Booking> _repo;
@@ -20,25 +25,37 @@ namespace ReservaHotel.Application.Bookings.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(UpdateBookingCommand request, CancellationToken ct)
         {
-            var spec = new BookingSpec(request.Id);
-            var entity = await _repo.FirstOrDefaultAsync(spec, ct);
-            if (entity == null)
+            try
+            {
+                var spec = new BookingSpec(request.Id);
+                var entity = await _repo.FirstOrDefaultAsync(spec, ct);
+                if (entity == null)
+                {
+                    return new CustomWebResponse(true)
+                    {
+                        StatusCode = HttpStatusCode.NotFound,
+                        Message = "Booking not found"
+                    };
+                }
+
+                _mapper.Map(request.Booking, entity);
+                await _repo.UpdateAsync(entity, ct);
+                return new CustomWebResponse
+                {
+                    ResponseBody = _mapper.Map<Application.Common.Dtos.BookingDto>(entity)
+                };
+            }
+            catch
             {
                 return new CustomWebResponse(true)
                 {
-                    StatusCode = HttpStatusCode.NotFound,
-                    Message = "Booking not found"
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = "An unexpected error occurred while updating the booking."
                 };
             }
-
-            _mapper.Map(request.Booking, entity);
-            await _repo.UpdateAsync(entity, ct);
-            return new CustomWebResponse
-            {
-                ResponseBody = _mapper.Map<Application.Common.Dtos.BookingDto>(entity)
-            };
         }
     }
 }

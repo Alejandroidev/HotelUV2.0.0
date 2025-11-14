@@ -4,6 +4,7 @@ using ReservaHotel.Infrastructure.Data;
 using ReservaHotel.Presentacion.Config;
 using Microsoft.OpenApi.Models;
 using It270.MedicalManagement.Billing.Presentation.WebApi.Config;
+using System.Reflection;
 
 namespace ReservaHotel.Presentacion
 {
@@ -16,8 +17,7 @@ namespace ReservaHotel.Presentacion
             Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
             builder.Services.AddDbContext<HotelDbContext>(options =>
-                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") 
-                ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 
             builder.Services.AddCoreServices(builder.Configuration);
             builder.Services.AddWebServices();
@@ -31,6 +31,24 @@ namespace ReservaHotel.Presentacion
                     Version = "v1",
                     Description = "API REST de gestión de reservas de hotel"
                 });
+
+                // Include XML comments from all projects
+                var basePath = AppContext.BaseDirectory;
+                var xmlFiles = new[]
+                {
+                    "ReservaHotel.Presentacion.xml",
+                    "ReservaHotel.Application.xml",
+                    "ReservaHotel.Domain.xml",
+                    "ReservaHotel.Infrastructure.xml"
+                };
+                foreach (var xml in xmlFiles)
+                {
+                    var xmlPath = Path.Combine(basePath, xml);
+                    if (File.Exists(xmlPath))
+                    {
+                        c.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
+                    }
+                }
             });
 
             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -50,20 +68,8 @@ namespace ReservaHotel.Presentacion
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<HotelDbContext>();
-
-                // 1) Crear esquema si la BD está vacía
                 await db.Database.EnsureCreatedAsync();
-
-                // 2) Si existen migraciones, intentar aplicarlas
-                try 
-                { 
-                    await db.Database.MigrateAsync(); 
-                } 
-                catch 
-                { 
-                    /* ignore if no migrations */ 
-                }
-
+                try { await db.Database.MigrateAsync(); } catch { }
                 await HotelDbContextSeed.SeedAsync(db);
             }
 

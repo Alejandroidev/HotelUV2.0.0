@@ -9,6 +9,13 @@ using System.Net;
 
 namespace ReservaHotel.Application.Bookings.Handlers
 {
+    /// <summary>
+    /// Handles requests to retrieve a booking by its identifier.
+    /// </summary>
+    /// <remarks>
+    /// Example:
+    /// var result = await _mediator.Send(new GetBookingByIdQuery(id), ct);
+    /// </remarks>
     public class GetBookingByIdHandler : IRequestHandler<GetBookingByIdQuery, CustomWebResponse>
     {
         private readonly IReadRepository<Booking> _repo;
@@ -20,6 +27,7 @@ namespace ReservaHotel.Application.Bookings.Handlers
             _mapper = mapper;
         }
 
+        /// <inheritdoc />
         public async Task<CustomWebResponse> Handle(GetBookingByIdQuery request, CancellationToken ct)
         {
             var spec = new BookingSpec(request.Id);
